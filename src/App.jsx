@@ -13,7 +13,7 @@ import PageLayout from "./components/page/PageLayout";
 import Tools from "./components/page/Tools";
 import Utils from "./components/page/Utils";
 import SingleHooks from "./components/post/SinglePost";
-import AddPost from "./components/page/Addpost";
+import AddPost from "./components/page/AddPost";
 
 function App() {
   return (
