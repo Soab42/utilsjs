@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+  ul {
+    @apply space-y-2;
+  }
+}
+.error {
+  color: red;
+  padding: 5px;
+}
+li {
+  list-style: none;
+  position: relative;
+  overflow: hidden;
+  padding: 3px;
+  padding-inline: 1.2rem;
+  transition: all 1s ease-in-out;
+}
+
+li::after {
+  content: "";
+  height: 0.15rem;
+  position: absolute;
+  width: 100%;
+  transition: all 1s ease-in-out;
+  left: 0;
+  bottom: 0;
+  transform: translateX(-100%);
+  background: #420e38c2;
+}
+
+li::before {
+  content: "";
+  transition: all 1s ease-in-out;
+  height: 0.15rem;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transform: translateX(200%);
+  background: #420e38c2;
+}
+
+li:hover::after {
+  transform: translateX(0%);
+  right: 0;
+}
+
+li:hover::before {
+  transform: translateX(0%);
+  right: 0;
+}
+li:hover {
+  border-radius: 0 50px 0 50px;
+  color: rgb(24, 15, 2);
+}
+
+.active {
+  border-radius: 0 50px 0 50px;
+  color: rgb(24, 20, 21);
+  /* padding: 0.rem 2rem; */
+}
+.active::after {
+  content: "";
+  height: 0.15rem;
+  position: absolute;
+  width: 100%;
+  transition: all 1s ease-in-out;
+  bottom: 0;
+  background: #420e38c2;
+  transform: translateX(0%);
+  right: 0;
+}
+
+.active::before {
+  content: "";
+  transition: all 1s ease-in-out;
+  height: 0.15rem;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  background: #420e38c2;
+  transform: translateX(0%);
+  right: 0;
+}
+
+.background-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-gradient {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    #5ff0c0,
+    blue,
+    #5ff0c0,
+    rgb(151, 62, 90)
+  );
+  background-size: 200% 200%;
+  backdrop-filter: blur(10px);
+}
