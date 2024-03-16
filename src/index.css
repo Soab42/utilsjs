@@ -3,15 +3,24 @@
 @tailwind utilities;
 
 @layer {
-  ul {
-    @apply space-y-2;
+  ul > li {
+    @apply p-1 my-1 hover:bg-green-700/20 duration-500;
+  }
+  code {
+    @apply bg-green-600/10;
+  }
+  h3 {
+    @apply text-xl font-bold;
+  }
+  strong {
+    @apply text-sm font-black;
   }
 }
 .error {
   color: red;
   padding: 5px;
 }
-li {
+a > li {
   list-style: none;
   position: relative;
   overflow: hidden;
@@ -20,7 +29,7 @@ li {
   transition: all 1s ease-in-out;
 }
 
-li::after {
+a > li::after {
   content: "";
   height: 0.15rem;
   position: absolute;
@@ -32,7 +41,7 @@ li::after {
   background: #420e38c2;
 }
 
-li::before {
+a > li::before {
   content: "";
   transition: all 1s ease-in-out;
   height: 0.15rem;
@@ -44,16 +53,16 @@ li::before {
   background: #420e38c2;
 }
 
-li:hover::after {
+a > li:hover::after {
   transform: translateX(0%);
   right: 0;
 }
 
-li:hover::before {
+a > li:hover::before {
   transform: translateX(0%);
   right: 0;
 }
-li:hover {
+a > li:hover {
   border-radius: 0 50px 0 50px;
   color: rgb(24, 15, 2);
 }

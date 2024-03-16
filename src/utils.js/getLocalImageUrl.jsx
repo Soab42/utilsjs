@@ -1,4 +1,4 @@
-// function for generating url form local machine
+// function for generating file  url form local machine
 
 export const getLocalImageURL = (files, callback) => {
   const file = files[0];
