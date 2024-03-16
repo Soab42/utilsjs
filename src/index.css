@@ -3,14 +3,17 @@
 @tailwind utilities;
 
 @layer {
+  body {
+    @apply bg-[#080D1D] text-slate-200;
+  }
   ul > li {
-    @apply p-1 my-1 hover:bg-green-700/20 duration-500;
+    @apply p-1 my-0.5 h-9 hover:bg-green-700/20 duration-500;
   }
   code {
     @apply bg-green-600/10;
   }
   h3 {
-    @apply text-xl font-bold;
+    @apply font-bold;
   }
   strong {
     @apply text-sm font-black;
@@ -38,7 +41,7 @@ a > li::after {
   left: 0;
   bottom: 0;
   transform: translateX(-100%);
-  background: #420e38c2;
+  background: #2b4b6f;
 }
 
 a > li::before {
@@ -50,7 +53,7 @@ a > li::before {
   left: 0;
   top: 0;
   transform: translateX(200%);
-  background: #420e38c2;
+  background: #2b4b6fc0;
 }
 
 a > li:hover::after {
@@ -64,12 +67,12 @@ a > li:hover::before {
 }
 a > li:hover {
   border-radius: 0 50px 0 50px;
-  color: rgb(24, 15, 2);
+  /* color: rgb(24, 15, 2); */
 }
 
 .active {
   border-radius: 0 50px 0 50px;
-  color: rgb(24, 20, 21);
+  /* color: rgb(24, 20, 21); */
   /* padding: 0.rem 2rem; */
 }
 .active::after {
@@ -79,7 +82,7 @@ a > li:hover {
   width: 100%;
   transition: all 1s ease-in-out;
   bottom: 0;
-  background: #420e38c2;
+  background: #0ab538c2;
   transform: translateX(0%);
   right: 0;
 }
@@ -91,7 +94,7 @@ a > li:hover {
   position: absolute;
   width: 100%;
   top: 0;
-  background: #420e38c2;
+  background: #0ab538c2;
   transform: translateX(0%);
   right: 0;
 }

@@ -16,7 +16,7 @@ export default function SinglePost() {
   return (
     snapshots && (
       <div className="space-y-3 p-3 text-lg text-pretty">
-        <h1 className="w-full text-center bg-blue-400/20 text-2xl pl-4 py-3 text-blue-900 font-bold">
+        <h1 className="w-full text-center bg-blue-400/20 text-2xl pl-4 py-3  font-bold">
           {snapshots[0]?.val().name}
         </h1>
         {snapshots?.map((snapshot) => (

@@ -16,7 +16,7 @@ export default function LeftBar() {
   loading && <span>;List: Loading...</span>;
 
   return (
-    <ul className="flex flex-col mr-4 p-1 h-full ring-1">
+    <ul className="flex flex-col mr-4 p-2 rounded h-full ring-1 ring-green-600/70">
       <Link
         to={"/write"}
         className="bg-green-700/20 text-center py-2 hover:bg-green-600/50 duration-500 w-full"

@@ -17,7 +17,7 @@ export default function TextWithMarkup({ text }) {
           return (
             <span
               key={index}
-              className="text-justify text-black"
+              className="text-justify"
               dangerouslySetInnerHTML={{ __html: capitalizeSentences(chunk) }}
             >
               {/* {capitalizeSentences(chunk)} */}
