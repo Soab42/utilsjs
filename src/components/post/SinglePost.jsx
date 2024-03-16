@@ -28,7 +28,7 @@ export default function SinglePost() {
               key={snapshot?.val().key}
               text={snapshot?.val().content}
             />
-            <div className=" p-2 flex rounded flex-col gap-2 bg-blue-200">
+            <div className="mt-10 p-2 flex rounded flex-col gap-2 bg-blue-200">
               <p className="font-black">Posted By</p>
               <div className="flex gap-2">
                 <img
@@ -36,7 +36,7 @@ export default function SinglePost() {
                   width={50}
                   height={30}
                 />
-                <div className="flex gap-2 justify-between w-full items-end capitalize">
+                <div className="flex gap-2 justify-between w-full items-end capitalize ">
                   <p className="text-xl">{snapshot?.val().author.name}</p>
                   {/* <p>{snapshot?.val().author.email}</p> */}
                   <p>posted on: {getDateFormat(snapshot?.val().createdAt)}</p>
