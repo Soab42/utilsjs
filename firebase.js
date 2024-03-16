@@ -11,15 +11,14 @@ import {
 } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 const firebaseConfig = {
-  apiKey: "AIzaSyA24bREtA-6IZGdLQbWXSkD8vEoY0RzbWA",
-  authDomain: "katthokra.firebaseapp.com",
-  databaseURL:
-    "https://katthokra-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "katthokra",
-  storageBucket: "katthokra.appspot.com",
-  messagingSenderId: "467644863964",
-  appId: "1:467644863964:web:78ad6bb0234fea4df8eb19",
-  measurementId: "G-P5JBBLK50G",
+  apiKey: "AIzaSyA4EGC6IBIPSgu7VNJRV2fEqf-HtOcvodI",
+  authDomain: "utillsjs2024.firebaseapp.com",
+  databaseURL: "https://utillsjs2024-default-rtdb.firebaseio.com",
+  projectId: "utillsjs2024",
+  storageBucket: "utillsjs2024.appspot.com",
+  messagingSenderId: "191989815985",
+  appId: "1:191989815985:web:15fceda0963ddd2abfa090",
+  measurementId: "G-W7WJLHMKRW",
 };
 
 // Initialize Firebase
