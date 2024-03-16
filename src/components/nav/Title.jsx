@@ -3,7 +3,7 @@ import { motion } from "framer-motion"; // Import motion component from Framer M
 
 const RotatingTitle = () => {
   // Define a functional component named RotatingTitle
-  const text = "UtillsJs";
+  const text = "UtilsJs";
   const textArray = text.split("");
   //   console.log(textArray);
 
@@ -24,7 +24,7 @@ const RotatingTitle = () => {
             }}
             transition={{
               duration: 2,
-              delay: i / 11,
+              delay: i / 10,
               repeat: Infinity,
               repeatDelay: 5,
               type: "tween",

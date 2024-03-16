@@ -48,10 +48,10 @@ const CodeEditor = forwardRef((props, ref) => {
               { text: "PHP", value: "php" },
             ],
             toolbar:
-              "undo redo|emoticons|image | fullscreen  | blocks | " +
+              "undo redo|emoticons|image| codesample code | fullscreen  | blocks | " +
               "bold italic forecolor | alignleft aligncenter " +
               "alignright alignjustify | bullist numlist outdent indent | " +
-              "removeformat| codesample code | help",
+              "removeformat | help",
             content_style:
               "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
           }}
@@ -59,19 +59,21 @@ const CodeEditor = forwardRef((props, ref) => {
       </div>
       <button
         className="rounded-md px-10 mt-4 py-2 bg-gray-200 hover:bg-green-300 duration-200"
+        type="button"
         onClick={props.onClick}
       >
-        View
+        Set & View
       </button>
       <button
         className="px-4 rounded-md mt-4 ml-4 py-2 bg-blue-200 hover:bg-green-300 duration-200"
+        type="button"
         onClick={handleCode}
       >
         <code>add code block</code>
       </button>
       <button
+        type="submit"
         className="px-4 rounded-md mt-4 mx-2 py-2 bg-green-200 float-right hover:bg-green-300 duration-200"
-        onClick={handleCode}
       >
         submit
       </button>

@@ -1,15 +1,17 @@
 import { useState } from "react";
 
-export function useActive() {
-  const [active, setActive] = useState(false);
-
-  const handleIsActive = (value) => {
+// for toggling true false state changes
+const useActive = (initialState) => {
+  const [active, setActive] = useState(initialState || false);
+  const handleActive = (value) => {
     if (typeof value === "boolean") {
-      setActive(value || !active);
+      setActive(value);
     } else {
-      console.error("Invalid value type. Expected boolean.");
+      setActive(!active);
     }
   };
 
-  return { active, handleIsActive };
-}
+  return [active, handleActive];
+};
+
+export default useActive;

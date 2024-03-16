@@ -1,6 +1,6 @@
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, logout } from "../../../firebase";
-import { useActive } from "../../hooks/useActive";
+import useActive from "../../hooks/useActive";
 import Icon from "../../assets/person_11103795.png";
 export default function User() {
   const [user, loading, error] = useAuthState(auth);

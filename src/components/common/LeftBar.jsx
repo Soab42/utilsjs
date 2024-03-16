@@ -2,7 +2,7 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import { useList } from "react-firebase-hooks/database";
 import { ref } from "firebase/database";
 import { db } from "../../../firebase";
-import { extractFirstPathname } from "../utils.js/extractFirstPathname";
+import { extractFirstPathname } from "../../utils.js/extractFirstPathname";
 export default function LeftBar() {
   // Define an array of items with links
   const location = useLocation();
