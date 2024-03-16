@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import CodeViewer from "./CodeVIewer";
+import CodeViewer from "./CodeViewer";
 export default function TextWithMarkup({ text }) {
   // Define the regex pattern
   const pattern = /@(.*?)@#/gs;
