@@ -34,7 +34,7 @@ export default function LeftBar() {
               params && params?.name === item.key
                 ? "shadow-md ring-emerald-500 border-y border-green-600 w-full rounded-sm"
                 : ""
-            } h-10 flex mt-1 items-center hover:bg-green-600/30 pl-2`}
+            } h-10 flex mt-1 items-center hover:bg-green-600/30 pl-2 border-b`}
           >
             <Link to={`${pathName}/${item.key}`}>{item.key}</Link>
           </li>

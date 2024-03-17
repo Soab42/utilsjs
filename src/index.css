@@ -117,3 +117,49 @@ a > li:hover {
   background-size: 200% 200%;
   backdrop-filter: blur(10px);
 }
+
+.rotate {
+  animation: rotate360 50s linear infinite backwards;
+}
+
+@keyframes rotate360 {
+  0%,
+  100% {
+    rotate: 0deg;
+  }
+  50% {
+    rotate: 560deg;
+    scale: 5;
+    transform: translateX("50%");
+  }
+}
+
+.go {
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+.go::after {
+  content: ">";
+  height: 7px;
+  width: 40px;
+  /* background: beige; */
+  position: absolute;
+  top: 20px;
+  transition: all 0.5s ease-in-out;
+  right: 30px;
+}
+.go:hover {
+  transition: all 0.5s ease-in-out;
+  scale: 1.05;
+  box-shadow: 2px 5px 10px rgba(32, 118, 216, 0.691);
+}
+.go:hover::after {
+  transition: all 0.5s ease-in-out;
+  content: ">>>";
+  height: 7px;
+  width: 40px;
+  /* background: beige; */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

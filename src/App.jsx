@@ -25,6 +25,7 @@ function App() {
             <Route path="/" element={<Home />} exact />
             <Route path="/blog" element={<Blog />} />
             <Route path="/components" element={<Components />} />
+            <Route path="/components/:name" element={<Components />} />
             <Route element={<PublicRoute />}>
               <Route path="/login" element={<Login />} />
               <Route path="/registration" element={<Registration />} />

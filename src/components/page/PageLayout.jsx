@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import LeftBar from "../common/LeftBar";
 export default function PageLayout() {
   return (
-    <div className="flex gap-2  p-5  min-h-[90vh] -z-10">
+    <div className="flex gap-2  p-5  min-h-[90vh] -z-10 border-x-2">
       <div className="min-w-[15%] h-[90vh] fixed  min-h-full">
         <LeftBar />
       </div>
