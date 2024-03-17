@@ -23,6 +23,8 @@ function App() {
           <Route element={<Layout />}>
             <Route path="*" element={<PageNotFound />} />
             <Route path="/" element={<Home />} exact />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/components" element={<Components />} />
             <Route element={<PublicRoute />}>
               <Route path="/login" element={<Login />} />
               <Route path="/registration" element={<Registration />} />
@@ -31,7 +33,6 @@ function App() {
               <Route path="/write" element={<AddPost />} />
             </Route>
             <Route element={<PageLayout />}>
-              <Route path="/components" element={<Components />} />
               <Route path="/hooks" element={<Hooks />} />
               <Route path="/hooks/:name" element={<SingleHooks />} />
               <Route path="/utils" element={<Utils />} />
@@ -39,7 +40,6 @@ function App() {
               <Route path="/tools" element={<Tools />} />
               <Route path="/tools/:name" element={<SingleHooks />} />
             </Route>
-            <Route path="/blog" element={<Blog />} />
           </Route>
         </Routes>
       </BrowserRouter>

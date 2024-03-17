@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Prism from "prismjs";
-import "prismjs/themes/prism-twilight.min.css";
+import "prismjs/themes/prism-coy.css";
 import { TiClipboard, TiTick } from "react-icons/ti";
 function CodeViewer({ text }) {
   const [copy, setCopy] = useState(false);

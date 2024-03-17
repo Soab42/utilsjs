@@ -30,11 +30,11 @@ export default function LeftBar() {
         return (
           <li
             key={index}
-            className={
+            className={`${
               params && params?.name === item.key
                 ? "shadow-md ring-emerald-500 border-y border-green-600 w-full rounded-sm"
                 : ""
-            }
+            } h-10 flex mt-1 items-center hover:bg-green-600/30 pl-2`}
           >
             <Link to={`${pathName}/${item.key}`}>{item.key}</Link>
           </li>

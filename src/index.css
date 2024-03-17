@@ -3,21 +3,20 @@
 @tailwind utilities;
 
 @layer {
-  body {
-    @apply bg-[#080D1D] text-slate-200;
-  }
-  ul > li {
+  /* body {
+    @apply dark:bg-[#080D1D] bg-white dark:text-slate-200 text-black;
+  } */
+  /* ul > li {
     @apply p-1 my-0.5 h-9 hover:bg-green-700/20 duration-500;
-  }
+  } */
   code {
     @apply bg-green-600/10;
   }
-  h3 {
-    @apply font-bold;
-  }
-  strong {
-    @apply text-sm font-black;
-  }
+}
+h3 {
+  font-size: larger;
+  padding: 10px 0px;
+  font-weight: 700;
 }
 .error {
   color: red;

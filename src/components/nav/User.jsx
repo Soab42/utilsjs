@@ -4,8 +4,9 @@ import useActive from "../../hooks/useActive";
 import Icon from "../../assets/person_11103795.png";
 export default function User() {
   const [user, loading, error] = useAuthState(auth);
-  const { active, handleIsActive } = useActive();
+  const [active, handleIsActive] = useActive();
   const name = user?.displayName?.split(" ");
+  // console.log(active);
   return (
     <div className="relative z-50">
       <div
