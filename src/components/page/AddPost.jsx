@@ -27,7 +27,12 @@ export default function AddPost() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    const dataRef = ref(db, `${data.category}/${data.name}`);
+    let dataRef;
+    if (data.category === "components") {
+      dataRef = ref(db, `${data.category}/${data.type}/${data.name}`);
+    } else {
+      dataRef = ref(db, `${data.category}/${data.name}`);
+    }
     // console.log(serverTimestamp);
     push(dataRef, {
       ...data,
@@ -35,10 +40,17 @@ export default function AddPost() {
       updatedAt: serverTimestamp(),
       author: user,
     })
-      .then((data) => {
-        console.log(data.root.key);
+      .then((res) => {
+        console.log(res.key);
         setLoading(false);
-        alert(data.key);
+        if (data.category === "components") {
+          navigate(`/${data.category}/${data.type}`);
+        } else if (data.category === "blogs") {
+          navigate(`/${data.category}/${data.name}/${ref.key}`);
+        } else {
+          navigate(`/${data.category}/${data.name}`);
+        }
+        alert(res.key);
       })
       .catch((err) => {
         setLoading(false), setError(err.message);
@@ -73,7 +85,7 @@ export default function AddPost() {
                 <option value="hooks">Hooks</option>
                 <option value="utils">Utils</option>
                 <option value="tools">Tools</option>
-                <option value="blog">Blog</option>
+                <option value="blogs">Blog</option>
               </select>
             </label>
             {data.category === "components" && (
@@ -91,7 +103,7 @@ export default function AddPost() {
                 >
                   <option>select category</option>
                   {componentsList.map((component) => (
-                    <option value={component} key={component}>
+                    <option value={component.toLowerCase()} key={component}>
                       {component}
                     </option>
                   ))}

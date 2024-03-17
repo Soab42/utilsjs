@@ -24,12 +24,12 @@ export default function MainCard({ data = {}, postId }) {
             transition: "all 1s cubic-bezier(0.25, 0.1, 0.25, 1) .1s",
           }}
         >
-          <div className="mt-2 relative">
+          <div className="relative">
             <h3 className="dark:text-slate-700 text-xl lg:text-2xl">
               {data.name}
             </h3>
             <p
-              className="mb-6 text-base text-slate-500 mt-1 line-clamp-3"
+              className="mb-6 text-base text-slate-500 mt-1 line-clamp-5"
               dangerouslySetInnerHTML={{ __html: data.content }}
             >
               {/* {data.content} */}

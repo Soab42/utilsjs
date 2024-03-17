@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 export default function Home() {
   return (
-    <div className="min-h-[88vh] p-5">
+    <div className="p-5">
       <Header />
     </div>
   );
@@ -82,7 +82,7 @@ const Feature = ({ icon, title, description }) => {
       }}
       animate={{ y: 0, x: 0, opacity: 1 }}
       transition={{ duration: 1, type: "spring" }}
-      className="p-4 border rounded-lg shadow-xl    bg-blue-700/10  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  border-gray-100 w-[28rem] "
+      className="p-4 border rounded-lg shadow-xl    bg-blue-700/10  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  border-gray-100 w-full "
     >
       <div className="text-3xl mb-2">{icon}</div>
       <h2 className="text-xl font-bold mb-2 text-amber-950">{title}</h2>
@@ -93,7 +93,7 @@ const Feature = ({ icon, title, description }) => {
 
 const Header = () => {
   return (
-    <div className="w-full flex flex-col items-center h-[85vh] bg-slate-50 overflow-hidden relative ">
+    <div className="w-full flex flex-col items-center  bg-slate-50 h-full overflow-hidden p-4 relative rounded-xl ">
       <section className="absolute  blur-2xl opacity-90 flex flex-col gap-24 rotate">
         <div className="bg-violet-600 h-5 w-[calc(105)]"></div>
         <div className="bg-green-400 h-5 w-screen"></div>

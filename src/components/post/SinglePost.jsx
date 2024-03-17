@@ -2,8 +2,8 @@ import { ref } from "firebase/database";
 import { useList } from "react-firebase-hooks/database";
 import { useLocation } from "react-router-dom";
 import { db } from "../../../firebase";
-import getDateFormat from "../../utils.js/getDateFormat";
 import TextWithMarkup from "../code/TextWithMarkup";
+import AuthorDetails from "../common/AuthorDetails";
 
 export default function SinglePost() {
   const location = useLocation();
@@ -28,23 +28,7 @@ export default function SinglePost() {
               key={snapshot?.val().key}
               text={snapshot?.val().content}
             />
-            <div className="mt-10 p-2 flex rounded flex-col gap-2 shadow-xl ">
-              <p className="">Posted By</p>
-              <div className="flex gap-2">
-                <img
-                  src={snapshot?.val().author.avatar}
-                  width={60}
-                  className="rounded-full"
-                />
-                <div className="gap-2 w-full items-end capitalize ">
-                  <p className="text-xl font-black text-blue-900">
-                    {snapshot?.val().author.name}
-                  </p>
-                  {/* <p>{snapshot?.val().author.email}</p> */}
-                  <p>posted on: {getDateFormat(snapshot?.val().createdAt)}</p>
-                </div>
-              </div>
-            </div>
+            <AuthorDetails post={snapshot.val()} />
           </div>
         ))}
       </div>

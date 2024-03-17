@@ -6,12 +6,14 @@
   * {
     font-family: "Montserrat", sans-serif;
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
   }
 
   /* scrollbar css*/
   /* width */
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 2px;
   }
 
   /* Track */

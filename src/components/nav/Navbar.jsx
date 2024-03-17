@@ -9,7 +9,7 @@ export default function Navbar() {
   const [user, loading, error] = useAuthState(auth);
 
   return (
-    <div className="flex justify-between h-[4.5rem]  backdrop-blur-md xl:px-52 px-5 items-center shadow-xl shadow-red-950/10 fixed w-full z-50 bg-blue-6  00/10">
+    <div className="flex justify-between h-[4.5rem]  backdrop-blur-md xl:px-52 items-center shadow-xl shadow-red-950/10 fixed w-full px-2 z-50 bg-blue-6  00/10">
       <section className="">
         <Logo />
       </section>

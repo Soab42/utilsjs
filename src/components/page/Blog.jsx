@@ -18,7 +18,10 @@ export default function Blog() {
       >
         Write New blog
       </Link>
-      <section className="">
+      <section className="mt-16 ring-1 p-2 grid grid-flow-row rounded-lg ">
+        <h3 className="w-full bg-green-400/30 text-center mb-2 text-fuchsia-900 font-bold text-2xl">
+          Recent Blogs
+        </h3>
         {snapshots.map((snapshot) => {
           const data = Object.values(snapshot)[0];
           const key = Object.keys(snapshot)[0];

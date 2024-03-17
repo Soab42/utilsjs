@@ -24,8 +24,8 @@ function App() {
           <Route element={<Layout />}>
             <Route path="*" element={<PageNotFound />} />
             <Route path="/" element={<Home />} exact />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:name/:id" element={<SingleBlog />} />
+            <Route path="/blogs" element={<Blog />} />
+            <Route path="/blogs/:name/:id" element={<SingleBlog />} />
             <Route path="/components" element={<Components />} />
             <Route path="/components/:name" element={<Components />} />
             <Route element={<PublicRoute />}>

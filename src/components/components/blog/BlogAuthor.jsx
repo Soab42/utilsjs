@@ -4,7 +4,6 @@ import AuthorImage from "../common/AuthorImage";
 import getDateFormat from "../../../utils.js/getDateFormat";
 
 export default function BlogAuthor({ author, createdAt, likes }) {
-  console.log(author);
   return (
     <div className="flex justify-center items-center my-4 gap-4">
       <Link
