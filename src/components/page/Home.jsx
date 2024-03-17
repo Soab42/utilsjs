@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { motion } from "framer-motion";
 export default function Home() {
   return (
     <div className="min-h-[88vh] p-5">
@@ -11,7 +11,7 @@ export default function Home() {
 const App = () => {
   return (
     <div>
-      <main className="container mx-auto mt-8">
+      <main className="container mx-auto mt-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-10">
           <Feature
             icon="🚀"
@@ -71,11 +71,23 @@ const App = () => {
 
 const Feature = ({ icon, title, description }) => {
   return (
-    <div className="p-4 border rounded-lg shadow-xl  hover:scale-105 duration-300 hover:shadow-2xl hover:shadow-pink-300  bg-blue-700/10  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  border-gray-100">
+    <motion.div
+      initial={{
+        y: Math.random(2) * 1000,
+        x: Math.random(2) * 1000,
+        opacity: 0,
+      }}
+      whileHover={{
+        scale: 1.05,
+      }}
+      animate={{ y: 0, x: 0, opacity: 1 }}
+      transition={{ duration: 1, type: "spring" }}
+      className="p-4 border rounded-lg shadow-xl    bg-blue-700/10  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  border-gray-100 w-[28rem] "
+    >
       <div className="text-3xl mb-2">{icon}</div>
       <h2 className="text-xl font-bold mb-2 text-amber-950">{title}</h2>
       <p>{description}</p>
-    </div>
+    </motion.div>
   );
 };
 
@@ -90,24 +102,39 @@ const Header = () => {
         <div className="bg-rose-400 h-5 w-screen"></div>
         <div className="bg-yellow-400 h-5 w-screen"></div>
       </section>
-      <div className="header relative backdrop-blur-lg">
-        <h1 className="text-[10rem] font-black">
+      <motion.div className="header relative backdrop-blur-lg">
+        <motion.h1
+          className="text-[10rem] font-black"
+          initial={{ x: -1000, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           utils.<span className="text-amber-300">js</span>
-        </h1>
-        <p className="text-[1.3rem] lowercase flex items-center justify-center absolute top-48 right-44 border-y-2 px-4 w-[24.8rem] animate-pulse duration-1000 bg-gradient-to-r from-pink-400 bg-sky-400 via-amber-300 font-medium  text-white">
-          A speed engine for your web dev
-        </p>
-      </div>
-      <p className="text-2xl w-2/3 backdrop-blur-lg ">
+        </motion.h1>
+        <motion.p
+          className="text-[1rem] flex items-center justify-center absolute top-48 right-44 border-y-2 px-4 w-[24.8rem] animate-pulse duration-1000 bg-gradient-to-r from-pink-400 bg-sky-400 via-amber-300 font-medium  text-white tracking-[.1rem] capitalize"
+          initial={{ x: -1000, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          An accelerator engine for your web dev
+        </motion.p>
+      </motion.div>
+      <motion.p
+        className="text-2xl w-2/3 backdrop-blur-lg text-center"
+        initial={{ x: -1000, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         A collection of components, hooks and utility functions to streamline
         your development process. From handling data manipulation to assisting
         with common tasks, utils.js provides a comprehensive set of tools to
         enhance your web development experience.
-      </p>
+      </motion.p>
       <App />
-      <button className="mt-5 px-20 rounded-full bg-sky-600 py-5 text-xl text-yellow-200 font-bold go ">
+      <motion.button className="mt-12 px-20 rounded-full bg-sky-600 py-5 text-xl text-yellow-200 font-bold go ">
         <Link to={"/components"}>Let's explore</Link>
-      </button>
+      </motion.button>
     </div>
   );
 };
