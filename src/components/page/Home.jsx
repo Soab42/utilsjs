@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Logo from "../nav/Logo";
 
 export default function Home() {
   return (
@@ -72,9 +71,9 @@ const App = () => {
 
 const Feature = ({ icon, title, description }) => {
   return (
-    <div className="p-4 border rounded-lg backdrop-blur-xl shadow-xl bg-green-200/30 hover:scale-105 duration-300 hover:shadow-2xl hover:shadow-pink-300">
+    <div className="p-4 border rounded-lg shadow-xl  hover:scale-105 duration-300 hover:shadow-2xl hover:shadow-pink-300  bg-blue-700/10  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  border-gray-100">
       <div className="text-3xl mb-2">{icon}</div>
-      <h2 className="text-xl font-bold mb-2">{title}</h2>
+      <h2 className="text-xl font-bold mb-2 text-amber-950">{title}</h2>
       <p>{description}</p>
     </div>
   );
@@ -84,18 +83,18 @@ const Header = () => {
   return (
     <div className="w-full flex flex-col items-center h-[85vh] bg-slate-50 overflow-hidden relative ">
       <section className="absolute  blur-2xl opacity-90 flex flex-col gap-24 rotate">
-        <div className="bg-blue-600 h-5 w-[calc(105)]"></div>
+        <div className="bg-violet-600 h-5 w-[calc(105)]"></div>
         <div className="bg-green-400 h-5 w-screen"></div>
-        <div className="bg-pink-400 h-5 w-screen"></div>
-        <div className="bg-yellow-400 h-5 w-screen"></div>
-        <div className="bg-rose-400 h-5 w-screen"></div>
         <div className="bg-sky-400 h-10 w-screen"></div>
+        <div className="bg-pink-400 h-5 w-screen"></div>
+        <div className="bg-rose-400 h-5 w-screen"></div>
+        <div className="bg-yellow-400 h-5 w-screen"></div>
       </section>
       <div className="header relative backdrop-blur-lg">
         <h1 className="text-[10rem] font-black">
           utils.<span className="text-amber-300">js</span>
         </h1>
-        <p className="text-[1.3rem] lowercase flex items-center justify-center absolute top-48 right-36 border-y-2 px-4 w-[22.8rem] animate-pulse duration-1000 bg-gradient-to-r from-pink-400 bg-sky-400 via-amber-300 font-medium  text-white">
+        <p className="text-[1.3rem] lowercase flex items-center justify-center absolute top-48 right-44 border-y-2 px-4 w-[24.8rem] animate-pulse duration-1000 bg-gradient-to-r from-pink-400 bg-sky-400 via-amber-300 font-medium  text-white">
           A speed engine for your web dev
         </p>
       </div>

@@ -10,7 +10,7 @@ export default function Layout() {
         <Navbar />
       </nav>
 
-      <main className="min-h-[88vh] mt-20 xl:mx-[10%]">
+      <main className="min-h-[80vh] mt-2 xl:mx-[10%]">
         <Outlet />
       </main>
       <footer className="backdrop-blur-lg w-full">

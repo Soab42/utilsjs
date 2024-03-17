@@ -14,6 +14,7 @@ import Tools from "./components/page/Tools";
 import Utils from "./components/page/Utils";
 import SingleHooks from "./components/post/SinglePost";
 import AddPost from "./components/page/AddPost";
+import SingleBlog from "./components/components/page/SingleBlog";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="*" element={<PageNotFound />} />
             <Route path="/" element={<Home />} exact />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:name/:id" element={<SingleBlog />} />
             <Route path="/components" element={<Components />} />
             <Route path="/components/:name" element={<Components />} />
             <Route element={<PublicRoute />}>

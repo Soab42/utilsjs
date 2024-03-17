@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 export default function PageNotFound() {
   return (
-    <div className="w-screen h-screen ">
+    <div className="w-[calc(100%)] h-[calc(100%)] left-0 top-0 overflow-hidden fixed">
       <div className="background-container">
         <motion.div
           className="background-gradient flex flex-col justify-center items-center duration-1000"

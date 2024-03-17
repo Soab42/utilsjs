@@ -7,7 +7,7 @@ export default function TextWithMarkup({ text }) {
   const chunks = text?.split(pattern);
 
   return (
-    <div className="text-gray-400">
+    <div className="text-slate-700">
       {chunks?.map((chunk, index) => {
         if (chunk.startsWith("code")) {
           const modifiedText = chunk.replace(/code/g, "");
