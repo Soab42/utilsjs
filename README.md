@@ -1,5 +1,47 @@
-# React + Vite + Tailwind
+# Welcome to utils.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Soab42/utilsjs/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/Soab42/utilsjs)](https://github.com/Soab42/utilsjs/issues)
+[![GitHub stars](https://img.shields.io/github/stars/Soab42/utilsjs)](https://github.com/Soab42/utilsjs/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Soab42/utilsjs)](https://github.com/Soab42/utilsjs/network)
 
-# vite-react-tailwind-temp
+Welcome to utils.js, a comprehensive collection of utility functions, components, hooks, and useful tools for developers. Whether you're working on a web project, application, or any other software, utils.js aims to streamline your development process with its diverse range of functionalities.
+
+## Features
+
+- **Component Repository:** Explore reusable components for popular frontend frameworks like React, Vue.js, and Angular, along with standalone UI components.
+- **Custom Hooks:** Discover custom hooks that simplify complex tasks, manage state, handle side effects, and more, enhancing the efficiency of your applications.
+- **Utility Functions:** A vast library of utility functions covering various programming tasks and scenarios, from simple array manipulation to advanced date calculations.
+- **Tools and Resources:** Find useful tools, resources, and libraries to aid in development, debugging, testing, and performance optimization.
+
+## Getting Started
+
+To start using utils.js or contribute to the project, visit our [website](https://utilsjs1.vercel.app/). You can explore the available utilities, components, and hooks, as well as submit your own contributions.
+
+## How to Contribute
+
+We welcome contributions from the community to help expand and improve utils.js. Whether you want to submit your own utility functions, components, or hooks, or help improve documentation and fix bugs, there are several ways to get involved. Please refer to our [Contribution Guidelines](https://github.com/Soab42/utilsjs/blob/main/Contribution.md) for detailed instructions on how to contribute.
+
+## Community and Support
+
+Have questions, feedback, or need support? Join our community on [GitHub Discussions](https://github.com/Soab42/utilsjs/discussions), where you can engage with other users and contributors. You can also report any issues or suggest features on our [issue tracker](https://github.com/Soab42/utilsjs/issues).
+
+## Blog
+
+Check out our latest blog posts for insights, tutorials, and updates on utils.js:
+
+- [Introducing utils.js: Streamline Your Development Workflow](https://blog.utilsjs.com/introducing-utilsjs)
+- [10 Must-Have Utility Functions for Every JavaScript Developer](https://blog.utilsjs.com/must-have-utility-functions)
+- [Building Better React Apps with Custom Hooks from utils.js](https://blog.utilsjs.com/building-better-react-apps)
+
+## Code of Conduct
+
+Please review our [Code of Conduct](https://github.com/Soab42/utilsjs/blob/main/CODE_OF_CONDUCT.md) before participating in the utils.js community. We expect all contributors and users to adhere to these guidelines to ensure a respectful and inclusive environment for everyone.
+
+## License
+
+utils.js is licensed under the [MIT License](https://github.com/Soab42/utilsjs/blob/main/LICENSE), which means you are free to use, modify, and distribute the software for personal or commercial purposes. See the LICENSE file for more details.
+
+---
+
+Thank you for choosing utils.js. We hope you find it valuable for your projects!
