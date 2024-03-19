@@ -31,7 +31,7 @@ Spread the word about the utils.js Design System by writing blog posts, creating
 
 ## Code of Conduct
 
-All contributors must adhere to our [Code of Conduct](https://github.com/Soab42/utilsjs/code_of_conduct.md). By participating, you agree to maintain a respectful and inclusive environment.
+All contributors must adhere to our [Code of Conduct](https://github.com/Soab42/utilsjs/blob/main/code_of_conduct.md). By participating, you agree to maintain a respectful and inclusive environment.
 
 ## Get Started
 
