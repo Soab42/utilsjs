@@ -8,6 +8,7 @@ export default function LeftBar() {
   const location = useLocation();
   const params = useParams();
   const pathName = extractFirstPathname(location?.pathname);
+
   const reference = ref(db, pathName);
   const [snapshots, loading, error] = useList(reference);
 
@@ -36,7 +37,9 @@ export default function LeftBar() {
                 : ""
             } h-10 flex mt-1 items-center hover:bg-green-600/30 pl-2 border-b`}
           >
-            <Link to={`${pathName}/${item.key}`}>{item.key}</Link>
+            <Link to={`${pathName}/${decodeURIComponent(item.key)}`}>
+              {item.key}
+            </Link>
           </li>
         );
       })}

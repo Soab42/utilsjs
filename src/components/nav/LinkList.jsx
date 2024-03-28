@@ -29,9 +29,9 @@ export default function LinkList() {
           tools
         </li>
       </Link>
-      <Link to={"/blog"}>
-        <li className={location.pathname.match("/blog") ? "active" : ""}>
-          blog
+      <Link to={"/blogs"}>
+        <li className={location.pathname.match("/blogs") ? "active" : ""}>
+          blogs
         </li>
       </Link>
     </>
