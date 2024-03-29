@@ -37,7 +37,7 @@ export default function LeftBar() {
                 : ""
             } h-10 flex mt-1 items-center hover:bg-green-600/30 pl-2 border-b`}
           >
-            <Link to={`${pathName}/${decodeURIComponent(item.key)}`}>
+            <Link to={`${pathName}/${decodeURIComponent(item.key)}` }>
               {item.key}
             </Link>
           </li>

@@ -6,21 +6,20 @@ import useActive from "../../hooks/useActive";
 import { useAvatar } from "../../hooks/useAvatar";
 import useAxios from "../../hooks/useAxios";
 import { useProfile } from "../../hooks/useProfile";
-import { isUser } from "../../provider/utils.js/isUser";
+
 
 import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
-import { useAuth } from "../../hooks/useAuth";
+// import { useAuth } from "../../hooks/useAuth";
 import { generateColor } from "../../provider/utils.js/generateColor";
 import ImageLoader from "../loader/ImageLoader";
 
 export default function ProfileImage({ author }) {
-  const { auth } = useAuth();
+  // const { auth } = useAuth();
   const { dispatch } = useProfile();
   const { api } = useAxios();
   const fileUploaderRef = useRef();
   const [loading, setLoading] = useActive();
-  const isME = isUser(auth?.user, author?.id);
+  // const isME = isUser(auth?.user, author?.id);
   const handleImageUpload = (event) => {
     event.preventDefault();
     fileUploaderRef.current.addEventListener("change", updateImageDisplay);
@@ -38,14 +37,14 @@ export default function ProfileImage({ author }) {
       const response = await api.post("/profile/avatar", formData);
       if (response.status === 200) {
         setLoading(false);
-        toast.success("Image uploaded successfully");
+        // toast.success("Image uploaded successfully");
         dispatch({
           type: actions.profile.IMAGE_UPDATED,
           data: response.data.user.avatar,
         });
       }
     } catch (error) {
-      toast.error(error.response.data.error);
+      // toast.error(error.response.data.error);
       setLoading(false);
       dispatch({
         type: actions.profile.DATA_FETCH_ERROR,
@@ -59,7 +58,7 @@ export default function ProfileImage({ author }) {
         <AuthorProfileImage author={author} loading={loading} />
       </div>
 
-      {isME && (
+      {/* {isME && ( */}
         <form id="form" encType="multipart/form-data">
           <button
             className="grid place-items-center absolute bottom-0 right-0 h-7 w-7 rounded-full dark:bg-slate-700 bg-slate-200 dark:hover:bg-slate-700/80 hover:bg-slate-200/80"
@@ -70,7 +69,7 @@ export default function ProfileImage({ author }) {
           </button>
           <input id="file" type="file" ref={fileUploaderRef} hidden />
         </form>
-      )}
+      {/* )} */}
     </div>
   );
 }
