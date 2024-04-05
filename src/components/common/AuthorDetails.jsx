@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import getDateFormat from "../../utils.js/getDateFormat";
 
 export default function AuthorDetails({ post = {} }) {
@@ -8,9 +9,12 @@ export default function AuthorDetails({ post = {} }) {
       <div className="flex gap-2">
         <img src={post?.author?.avatar} width={60} className="rounded-full" />
         <div className="gap-2 w-full items-end capitalize ">
-          <p className="text-xl font-black text-blue-900">
+          <Link
+            className="text-xl font-black text-blue-900"
+            to={`/profile/${post?.author?.userId}`}
+          >
             {post?.author?.name}
-          </p>
+          </Link>
           {/* <p>{snapshot?.val().author.email}</p> */}
           <p>posted on: {getDateFormat(post?.createdAt)}</p>
         </div>

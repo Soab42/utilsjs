@@ -8,7 +8,6 @@ import AuthorDetails from "../common/AuthorDetails";
 export default function SinglePost() {
   const location = useLocation();
   const reference = ref(db, decodeURIComponent(location?.pathname));
-  console.log(decodeURIComponent(reference));
 
   const [snapshots, loading, error] = useList(reference);
   error && <strong>Error: {error}</strong>;

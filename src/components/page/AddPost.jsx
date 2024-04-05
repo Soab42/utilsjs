@@ -41,7 +41,14 @@ export default function AddPost() {
       author: user,
     })
       .then((res) => {
-        console.log(res.key);
+        push(ref(db, "usersData/" + user?.userId + "/posts"), {
+          postId: res.key,
+          category: data.category,
+        })
+          .then((res) =>
+            console.log("post added to use post list. key-", res.key)
+          )
+          .catch((err) => console.log(err.message));
         setLoading(false);
         if (data.category === "components") {
           navigate(`/${data.category}/${data.type}`);
