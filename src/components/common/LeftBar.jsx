@@ -3,6 +3,7 @@ import { useList } from "react-firebase-hooks/database";
 import { ref } from "firebase/database";
 import { db } from "../../../firebase";
 import { extractFirstPathname } from "../../utils.js/extractFirstPathname";
+import { removeSlug } from "../../utils.js/generateSlug";
 export default function LeftBar() {
   // Define an array of items with links
   const location = useLocation();
@@ -37,8 +38,8 @@ export default function LeftBar() {
                 : ""
             } h-10 flex mt-1 items-center hover:bg-green-600/30 pl-2 border-b`}
           >
-            <Link to={`${pathName}/${decodeURIComponent(item.key)}` }>
-              {item.key}
+            <Link to={`${pathName}/${decodeURIComponent(item.key)}`}>
+              {removeSlug(item.key)}
             </Link>
           </li>
         );

@@ -8,6 +8,7 @@ import { useAuth } from "../../hooks/useAuth";
 import { componentsList } from "../../data/componentsType";
 import useActive from "../../hooks/useActive";
 import { useNavigate } from "react-router-dom";
+import { generateSlug } from "../../utils.js/generateSlug";
 export default function AddPost() {
   const [data, setData] = useState({ category: "", name: "", content: "" });
   const [loading, setLoading] = useActive();
@@ -22,8 +23,14 @@ export default function AddPost() {
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
-    setData((prev) => ({ ...prev, [name]: value }));
+    if (name === "name") {
+      setData((prev) => ({ ...prev, [name]: generateSlug(value) }));
+    } else {
+      setData((prev) => ({ ...prev, [name]: value }));
+    }
+    // console.log(test);
   };
+  console.log(data);
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -44,6 +51,7 @@ export default function AddPost() {
         push(ref(db, "usersData/" + user?.userId + "/posts"), {
           postId: res.key,
           category: data.category,
+          name: data.name,
         })
           .then((res) =>
             console.log("post added to use post list. key-", res.key)

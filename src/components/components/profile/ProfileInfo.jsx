@@ -13,7 +13,7 @@ export default function ProfileInfo() {
   const [snapshot, loading, error] = useObject(userRef);
 
   const user = snapshot?.val();
-  console.log();
+  const posts = user?.posts && Object?.values(user?.posts);
   if (loading)
     return (
       <div className="flex-center h-screen text-5xl capitalize">loading..</div>
@@ -41,14 +41,13 @@ export default function ProfileInfo() {
           </div>
           <Bio info={user} />
           <div className="w-3/4 border-b border-[#3F3F3F] py-6 lg:py-8"></div>
-          <div className="">
+          <div className="w-3/4">
             <h3>
-              All {Object?.values(user?.posts).length} post of{" "}
-              {user?.displayName}
+              All {posts?.length} post of {user?.displayName}
             </h3>
-            <div>
-              {Object?.values(user?.posts).map((post) => (
-                <UserPost post={post} key={post.postId} />
+            <div className="">
+              {posts?.map((post) => (
+                <UserPost post={post} key={post?.postId} />
               ))}
             </div>
           </div>

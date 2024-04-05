@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { db } from "../../../firebase";
 import TextWithMarkup from "../code/TextWithMarkup";
 import AuthorDetails from "../common/AuthorDetails";
+import { removeSlug } from "../../utils.js/generateSlug";
 
 export default function SinglePost() {
   const location = useLocation();
@@ -17,7 +18,7 @@ export default function SinglePost() {
     snapshots && (
       <div className="space-y-3 p-3 text-lg text-pretty">
         <h1 className="w-full text-center bg-blue-400/20 text-2xl pl-4 py-3  font-bold">
-          {snapshots[0]?.val().name}
+          {removeSlug(snapshots[0]?.val().name)}
         </h1>
         {snapshots?.map((snapshot) => (
           <div

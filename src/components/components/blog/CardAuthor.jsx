@@ -1,14 +1,7 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
 import AuthorImage from "../common/AuthorImage";
 import getDateFormat from "../../../utils.js/getDateFormat";
 
 export default function CardAuthor({ author, likes, createdAt }) {
-  const navigate = useNavigate();
-  const handleClick = (e) => {
-    e.preventDefault();
-    // navigate(getNameURL(author));
-  };
   return (
     <div className="flex justify-between items-center">
       <div className="flex items-center capitalize space-x-2">
@@ -16,7 +9,7 @@ export default function CardAuthor({ author, likes, createdAt }) {
 
         <div>
           <h5 className="dark:text-slate-800 text-sm">
-            <button onClick={handleClick}>{author?.name}</button>
+            <button>{author?.name}</button>
           </h5>
           <div className="flex items-center text-xs text-slate-700">
             <span>{getDateFormat(createdAt)}</span>
