@@ -35,11 +35,8 @@ export const signUp = async (userData) => {
     userData.password
   )
     .then(function (userCredential) {
-      // User registration successful, get the user's unique ID
-      var userId = userCredential.user.uid;
-
       // Save the user data to Firebase database using their unique ID as the key
-      saveUserData(userId, userData);
+      saveUserData(userCredential);
     })
     .catch(function (error) {
       console.error("Error registering user: ", error);
