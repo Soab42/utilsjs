@@ -5,7 +5,7 @@ export default function LinkList() {
   const location = useLocation();
   // console.log(location);
   return (
-    <>
+    <div className="lg:flex hidden">
       <Link to={"/"}>
         <li className={location.pathname === "/" ? "active" : ""}>home</li>
       </Link>
@@ -34,6 +34,6 @@ export default function LinkList() {
           blogs
         </li>
       </Link>
-    </>
+    </div>
   );
 }

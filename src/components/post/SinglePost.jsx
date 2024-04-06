@@ -9,15 +9,15 @@ import { removeSlug } from "../../utils.js/generateSlug";
 export default function SinglePost() {
   const location = useLocation();
   const reference = ref(db, decodeURIComponent(location?.pathname));
-
   const [snapshots, loading, error] = useList(reference);
   error && <strong>Error: {error}</strong>;
   loading && <span>;List: Loading...</span>;
   // snapshots.map((snapshot) => console.log(snapshot?.val()));
+
   return (
     snapshots && (
-      <div className="space-y-3 p-3 text-lg text-pretty">
-        <h1 className="w-full text-center bg-blue-400/20 text-2xl pl-4 py-3  font-bold">
+      <div className="xl:w-[60vw] w-full space-y-3 p-3 text-lg text-pretty overflow-hidden">
+        <h1 className="text-center bg-blue-400/20 text-2xl pl-4 py-3  font-bold">
           {removeSlug(snapshots[0]?.val().name)}
         </h1>
         {snapshots?.map((snapshot) => (

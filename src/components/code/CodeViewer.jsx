@@ -20,7 +20,7 @@ function CodeViewer({ text }) {
   return (
     <pre className="relative">
       <button
-        className="absolute px-1 right-2 top-2  ring-1 gap-1 rounded-sm backdrop-blur z-50 "
+        className="absolute px-1 right-2 top-2  ring-1 gap-1 rounded-sm backdrop-blur z-20 "
         onClick={handleCopy}
       >
         {copy ? (
@@ -36,7 +36,7 @@ function CodeViewer({ text }) {
         )}
       </button>
       <code
-        className={`language-javascript text-xs`}
+        className={`language-javascript z-0`}
         id="code"
         dangerouslySetInnerHTML={{ __html: text }}
       ></code>

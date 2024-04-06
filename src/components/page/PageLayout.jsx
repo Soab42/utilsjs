@@ -6,7 +6,7 @@ export default function PageLayout() {
       <div className="min-w-[15%] h-[90vh] fixed  min-h-full">
         <LeftBar />
       </div>
-      <div className="ml-[20%] w-full">
+      <div className="xl:ml-[20%] w-full">
         <Outlet />
       </div>
       {/* <div className="min-w-[15%] right-[10%] h-[90vh] fixed border-l-2 min-h-full -z-10">

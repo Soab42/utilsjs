@@ -13,8 +13,8 @@ export default function UserPost({ post = {} }) {
   const data = snapshot?.val();
   return (
     <div className="relative w-full">
-      <Link to={`/${post?.category}/${data?.name}`}>
-        <div className="blog-card h-full " key={data?.id}>
+      <Link to={getPostLink(post)}>
+        <div className="blog-card h-full " key={post}>
           <div className="relative flex flex-col justify-between">
             <div>
               <h3 className="dark:text-slate-700 text-xl lg:text-2xl">
@@ -61,3 +61,10 @@ export default function UserPost({ post = {} }) {
 //   return null;
 // }
 // Recursive function to search for a key in a nested object
+function getPostLink(data) {
+  if (data?.category == "blogs") {
+    return "/" + data.category + "/" + data.name + "/" + data.postId;
+  } else {
+    return "/" + data.category + "/" + data.name;
+  }
+}

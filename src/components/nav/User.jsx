@@ -14,14 +14,14 @@ export default function User() {
     navigate(`/profile/${user.uid}`);
   };
   return (
-    <div className="relative z-50">
+    <div className="relative z-50 hidden lg:block">
       <div
         className="flex gap-3 cursor-pointer justify-center items-center font-thin"
         onClick={() => {
           handleIsActive(!active);
         }}
       >
-        <p className="text-lg p-2 tracking-wider text-pink-800">
+        <p className="text-lg p-2 tracking-wider text-pink-800 ">
           {(name && name[name?.length - 1]) || user?.email}
         </p>
         <img
