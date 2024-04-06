@@ -1,38 +1,46 @@
 import { ref } from "firebase/database";
 import { useObject } from "react-firebase-hooks/database";
-import { db } from "../../../../firebase";
-import CardAuthor from "../blog/CardAuthor";
 import { Link } from "react-router-dom";
+import { db } from "../../../../firebase";
 import { removeSlug } from "../../../utils.js/generateSlug";
+import CardAuthor from "../blog/CardAuthor";
 export default function UserPost({ post = {} }) {
-  const userRef = ref(
-    db,
-    post?.category + "/" + post?.name + "/" + post?.postId
-  );
-  const [snapshot, loading, error] = useObject(userRef);
-  const data = snapshot?.val();
-  return (
-    <div className="relative w-full">
-      <Link to={`/${post?.category}/${data?.name}`}>
-        <div className="blog-card h-full " key={data?.id}>
-          <div className="relative flex flex-col justify-between">
-            <div>
-              <h3 className="dark:text-slate-700 text-xl lg:text-2xl">
-                {removeSlug(data?.name)}
-              </h3>
-              <p
-                className="mb-6 text-base text-slate-500 mt-1 line-clamp-5"
-                dangerouslySetInnerHTML={{ __html: data?.content }}
-              />
-            </div>
+    const userRef = ref(
+        db,
+        post?.category + "/" + post?.name + "/" + post?.postId
+    );
+    const [snapshot, loading, error] = useObject(userRef);
+    const { name, id, content, createdAt, author } = snapshot?.val() || {}; // logged user data
+    const { postId, category } = post || {};
+    return (
+        <div className="relative w-full">
+            <Link to={`/${category}/${name}/${postId}`}>
+                <div
+                    className="blog-card h-full "
+                    key={id}>
+                    <div className="relative flex flex-col justify-between">
+                        <div>
+                            <h3 className="dark:text-slate-700 text-xl lg:text-2xl">
+                                {removeSlug(name)}
+                            </h3>
+                            <p
+                                className="mb-6 text-base text-slate-500 mt-1 line-clamp-5"
+                                dangerouslySetInnerHTML={{
+                                    __html: content,
+                                }}
+                            />
+                        </div>
 
-            <CardAuthor author={data?.author} createdAt={data?.createdAt} />
-          </div>
+                        <CardAuthor
+                            author={author}
+                            createdAt={createdAt}
+                        />
+                    </div>
+                </div>
+            </Link>
+            {/* {isMe && <ActionDot post={data} />} */}
         </div>
-      </Link>
-      {/* {isMe && <ActionDot post={data} />} */}
-    </div>
-  );
+    );
 }
 
 // function flattenObject(obj = {}, key) {
