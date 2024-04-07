@@ -10,7 +10,7 @@ const CodeEditor = forwardRef((props, ref) => {
     }
   };
   return (
-    <div className="p-4">
+    <div className="p-4 text-sm">
       <div>
         <Editor
           apiKey="j32j82szrveom95zxgyc9s1qie1ejm67r96gbvcj8itwmd6d"

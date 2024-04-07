@@ -6,7 +6,7 @@ export default function BlogDetails({ blog = {} }) {
 
   return (
     <section>
-      <div className="container text-center py-8">
+      <div className="container text-center py-8 px-4">
         <h1 className="font-bold text-3xl md:text-5xl capitalize">
           {blog.name}
         </h1>

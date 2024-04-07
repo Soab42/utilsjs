@@ -80,12 +80,12 @@ export default function AddPost() {
       <h1 className="w-full bg-rose-700/20 p-2 text-center text-xl mb-2">
         Add New Post
       </h1>
-      <div className="flex">
-        <form className="w-1/2 " onSubmit={handleSubmit}>
+      <div className="xl:flex ">
+        <form className="xl:w-1/2 " onSubmit={handleSubmit}>
           <div className="flex flex-wrap gap-3 px-2 xl:items-center justify-between">
             <label
               htmlFor="category"
-              className="flex justify-between items-center w-[calc(50%-1em)]"
+              className="flex justify-between items-center xl:w-[calc(50%-1em)] w-full"
             >
               Category
               <select
@@ -106,7 +106,7 @@ export default function AddPost() {
             {data.category === "components" && (
               <label
                 htmlFor="type"
-                className="flex justify-between items-center w-[calc(50%-1em)]"
+                className="flex justify-between items-center w-full xl:w-[calc(50%-1em)]"
               >
                 Type
                 <select
@@ -128,7 +128,7 @@ export default function AddPost() {
 
             <label
               htmlFor="name"
-              className="flex justify-between items-center w-[calc(50%-1em)]"
+              className="flex justify-between items-center xl:w-[calc(50%-1em)] w-full"
             >
               Name
               <input
@@ -144,8 +144,8 @@ export default function AddPost() {
           </div>
           <CodeEditor ref={postRef} onClick={handleClick} />;
         </form>
-        <div className="w-[calc(50%-1rem)] mx-4 p-2 ring-1 h-[80vh] overflow-y-scroll">
-          <div className="flex gap-10 text-xl border-b-2 pb-2 ">
+        <div className="xl:w-[calc(50%-1rem)] mx-4 p-2 ring-1 h-[80vh] overflow-y-scroll">
+          <div className="flex gap-10 text-sm border-b-2 pb-2 ">
             <p>
               Category:
               <span className="text-emerald-600">{data.category}</span>

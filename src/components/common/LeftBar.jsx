@@ -22,7 +22,7 @@ export default function LeftBar() {
   return (
     <div className="">
       {!active && (
-        <div className=" p-1 xl:hidden fixed h-full top-28 left-12">
+        <div className=" p-1 xl:hidden fixed  pl-5 top-[4.5rem] left-0 w-full bg-white py-3 backdrop-blur-2xl">
           <button
             className="flex flex-col gap-1 duration-500"
             onClick={setActive}
@@ -42,7 +42,7 @@ export default function LeftBar() {
       <AnimatePresence>
         {active && (
           <motion.ul
-            className=" w-[50vw] flex flex-col p-2 rounded h-full ring-1 ring-green-600/70 bg-white lg:hidden"
+            className=" w-[45vw] flex flex-col p-2 rounded h-full ring-1 ring-green-600/70 bg-white lg:hidden absolute -top-2"
             initial={{
               opacity: 0,
               translateX: -100,
@@ -93,7 +93,10 @@ export default function LeftBar() {
                       : ""
                   } h-10 flex mt-1 items-center hover:bg-green-600/30 pl-2 border-b`}
                 >
-                  <Link to={`${pathName}/${decodeURIComponent(item.key)}`}>
+                  <Link
+                    to={`${pathName}/${decodeURIComponent(item.key)}`}
+                    onClick={setActive}
+                  >
                     {removeSlug(item.key)}
                   </Link>
                 </li>
@@ -102,6 +105,8 @@ export default function LeftBar() {
           </motion.ul>
         )}
       </AnimatePresence>
+
+      {/* for large device */}
       <ul className="lg:flex flex-col mr-4 p-2 rounded h-full ring-1 ring-green-600/70 bg-white hidden ">
         <Link
           to={"/write"}

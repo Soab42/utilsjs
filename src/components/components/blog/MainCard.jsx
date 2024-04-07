@@ -11,7 +11,7 @@ export default function MainCard({ data = {}, postId }) {
     margin: "0px 100px -50px 0px",
   });
   return (
-    <div className="relative w-[calc(33.33%-8px)]">
+    <div className="relative xl:w-[calc(33.33%-8px)]">
       <Link to={`${data.name}/${postId}`}>
         <div
           className="blog-card h-full "

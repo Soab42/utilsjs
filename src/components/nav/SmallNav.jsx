@@ -16,7 +16,7 @@ export default function SmallNav({ user }) {
       <AnimatePresence>
         {active && (
           <motion.div
-            className="absolute -right-10 top-12 w-[50vw]  bg-white p-2 gap-2 flex flex-col"
+            className="absolute -right-10 top-14 w-[45vw]  bg-white p-2 gap-2 flex flex-col"
             initial={{
               opacity: 0,
               translateX: 100,

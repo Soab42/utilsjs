@@ -18,7 +18,7 @@ function CodeViewer({ text }) {
   }, [text]);
 
   return (
-    <pre className="relative">
+    <pre className="relative -z-20">
       <button
         className="absolute px-1 right-2 top-2  ring-1 gap-1 rounded-sm backdrop-blur z-20 "
         onClick={handleCopy}
@@ -36,7 +36,7 @@ function CodeViewer({ text }) {
         )}
       </button>
       <code
-        className={`language-javascript z-0`}
+        className={`language-javascript`}
         id="code"
         dangerouslySetInnerHTML={{ __html: text }}
       ></code>

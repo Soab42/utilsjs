@@ -12,7 +12,9 @@
     margin: 0;
     padding: 0;
   }
-
+  strong > img {
+    width: 100%;
+  }
   /* scrollbar css*/
   /* width */
   ::-webkit-scrollbar {

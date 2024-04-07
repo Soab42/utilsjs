@@ -12,13 +12,15 @@ export default function Blog() {
   // console.log(snapshots);
   return (
     <div className=" border-x-2 min-h-[90vh] p-5 relative">
-      <Link
-        to={"/write"}
-        className="fixed right-64 px-10 bg-green-700/20 text-center py-2 hover:bg-green-600/50 duration-500"
-      >
-        Write New blog
-      </Link>
-      <section className="mt-16 ring-1 p-2 grid grid-flow-row rounded-lg ">
+      <div className="flex-center">
+        <Link
+          to={"/write"}
+          className="px-10 bg-green-700/20 text-center py-2 hover:bg-green-600/50 duration-500 "
+        >
+          Write New blog
+        </Link>
+      </div>
+      <section className="mt-4 ring-1 p-2 grid grid-flow-row rounded-lg ">
         <h3 className="w-full bg-green-400/30 text-center mb-2 text-fuchsia-900 font-bold text-2xl">
           Recent Blogs
         </h3>
