@@ -20,7 +20,7 @@ export default function LeftBar() {
   loading && <span>;List: Loading...</span>;
 
   return (
-    <div className="">
+    <div className="z-50">
       {!active && (
         <div className=" p-1 xl:hidden fixed  pl-5 top-[4.5rem] left-0 w-full bg-white py-3 backdrop-blur-2xl">
           <button
@@ -42,7 +42,7 @@ export default function LeftBar() {
       <AnimatePresence>
         {active && (
           <motion.ul
-            className=" w-[45vw] flex flex-col p-2 rounded h-full ring-1 ring-green-600/70 bg-white lg:hidden absolute -top-2"
+            className="w-[45vw] flex flex-col p-2 rounded h-full ring-1 ring-green-600/70 bg-white lg:hidden absolute -top-2 z-50"
             initial={{
               opacity: 0,
               translateX: -100,
@@ -50,7 +50,6 @@ export default function LeftBar() {
             animate={{
               translateX: -16,
               opacity: 1,
-              zIndex: 1000,
             }}
             exit={{
               opacity: 0,

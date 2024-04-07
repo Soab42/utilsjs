@@ -18,9 +18,9 @@ function CodeViewer({ text }) {
   }, [text]);
 
   return (
-    <pre className="relative -z-20">
+    <pre className="relative z-[-1] lg:z-20">
       <button
-        className="absolute px-1 right-2 top-2  ring-1 gap-1 rounded-sm backdrop-blur z-20 "
+        className="absolute px-1 right-2 top-2  ring-1 gap-1 rounded-sm backdrop-blur z-50 invisible lg:visible"
         onClick={handleCopy}
       >
         {copy ? (

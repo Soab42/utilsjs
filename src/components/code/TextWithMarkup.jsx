@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import CodeViewer from "./CodeViewer";
 export default function TextWithMarkup({ text }) {
+  console.log(text);
   // Define the regex pattern
-  const pattern = /@(.*?)@#/gs;
+  const pattern = /<pre>@(.*?)@#/gs;
   // Split the text into chunks using the regular expression
   const chunks = text?.split(pattern);
 
@@ -17,11 +18,9 @@ export default function TextWithMarkup({ text }) {
           return (
             <span
               key={index}
-              className="text-justify"
+              className="prose"
               dangerouslySetInnerHTML={{ __html: capitalizeSentences(chunk) }}
-            >
-              {/* {capitalizeSentences(chunk)} */}
-            </span>
+            />
           );
         }
       })}

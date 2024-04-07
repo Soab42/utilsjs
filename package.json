@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.12",
     "@tinymce/tinymce-react": "^4.3.2",
     "firebase": "^10.8.0",
     "framer-motion": "^11.0.6",
+    "highlight.js": "^11.9.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

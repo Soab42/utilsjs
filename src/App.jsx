@@ -16,90 +16,43 @@ import Utils from "./components/page/Utils";
 import SingleHooks from "./components/post/SinglePost";
 import PrivateRoute from "./components/route/PrivateRoute";
 import PublicRoute from "./components/route/PublicRoute";
+import Test from "./Test";
 
 function App() {
-    return (
-        <>
-            <BrowserRouter>
-                <Routes>
-                    <Route element={<Layout />}>
-                        <Route
-                            path="*"
-                            element={<PageNotFound />}
-                        />
-                        <Route
-                            path="/"
-                            element={<Home />}
-                            exact
-                        />
-                        <Route
-                            path="/blogs"
-                            element={<Blog />}
-                        />
-                        <Route
-                            path="/blogs/:name/:id"
-                            element={<SingleBlog />}
-                        />
-                        <Route
-                            path="/components"
-                            element={<Components />}
-                        />
-                        <Route
-                            path="/components/:name"
-                            element={<Components />}
-                        />
-                        <Route
-                            path="/profile/:id"
-                            element={<ProfileInfo />}
-                        />
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="*" element={<PageNotFound />} />
+            <Route path="/" element={<Home />} exact />
+            <Route path="/blogs" element={<Blog />} />
+            <Route path="/test" element={<Test />} />
+            <Route path="/blogs/:name/:id" element={<SingleBlog />} />
+            <Route path="/components" element={<Components />} />
+            <Route path="/components/:name" element={<Components />} />
+            <Route path="/profile/:id" element={<ProfileInfo />} />
 
-                        <Route element={<PublicRoute />}>
-                            <Route
-                                path="/login"
-                                element={<Login />}
-                            />
-                            <Route
-                                path="/registration"
-                                element={<Registration />}
-                            />
-                        </Route>
-                        <Route element={<PrivateRoute />}>
-                            <Route
-                                path="/write"
-                                element={<AddPost />}
-                            />
-                        </Route>
-                        <Route element={<PageLayout />}>
-                            <Route
-                                path="/hooks"
-                                element={<Hooks />}
-                            />
-                            <Route
-                                path="/hooks/:name"
-                                element={<SingleHooks />}
-                            />
-                            <Route
-                                path="/utils"
-                                element={<Utils />}
-                            />
-                            <Route
-                                path="/utils/:name"
-                                element={<SingleHooks />}
-                            />
-                            <Route
-                                path="/tools"
-                                element={<Tools />}
-                            />
-                            <Route
-                                path="/tools/:name"
-                                element={<SingleHooks />}
-                            />
-                        </Route>
-                    </Route>
-                </Routes>
-            </BrowserRouter>
-        </>
-    );
+            <Route element={<PublicRoute />}>
+              <Route path="/login" element={<Login />} />
+              <Route path="/registration" element={<Registration />} />
+            </Route>
+            <Route element={<PrivateRoute />}>
+              <Route path="/write" element={<AddPost />} />
+            </Route>
+            <Route element={<PageLayout />}>
+              <Route path="/hooks" element={<Hooks />} />
+              <Route path="/hooks/:name" element={<SingleHooks />} />
+              <Route path="/utils" element={<Utils />} />
+              <Route path="/utils/:name" element={<SingleHooks />} />
+              <Route path="/tools" element={<Tools />} />
+              <Route path="/tools/:name" element={<SingleHooks />} />
+            </Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;
