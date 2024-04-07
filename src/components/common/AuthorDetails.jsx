@@ -7,10 +7,10 @@ export default function AuthorDetails({ post = {} }) {
     <div className="mt-10 p-2 flex rounded flex-col gap-2 shadow-xl ">
       <p className="">Posted By</p>
       <div className="flex gap-2">
-        <img src={post?.author?.avatar} width={60} className="rounded-full" />
-        <div className="gap-2 w-full items-end capitalize ">
+        <img src={post?.author?.avatar} width={50} className="rounded-full" />
+        <div className="gap-2 w-full items-end capitalize self-center">
           <Link
-            className="text-xl font-black text-blue-900"
+            className="font-black text-blue-900"
             to={`/profile/${post?.author?.userId}`}
           >
             {post?.author?.name}

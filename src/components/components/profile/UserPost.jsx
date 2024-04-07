@@ -1,4 +1,4 @@
-import { ref } from "firebase/database";
+import { ref, remove } from "firebase/database";
 import { useObject } from "react-firebase-hooks/database";
 import { db } from "../../../../firebase";
 import CardAuthor from "../blog/CardAuthor";
@@ -11,27 +11,35 @@ export default function UserPost({ post = {} }) {
   );
   const [snapshot, loading, error] = useObject(userRef);
   const data = snapshot?.val();
-  return (
-    <div className="relative w-full">
-      <Link to={getPostLink(post)}>
-        <div className="blog-card h-full " key={post}>
-          <div className="relative flex flex-col justify-between">
-            <div>
-              <h3 className="dark:text-slate-700 text-xl lg:text-2xl">
-                {removeSlug(data?.name)}
-              </h3>
-              <p
-                className="mb-6 text-base text-slate-500 mt-1 line-clamp-5"
-                dangerouslySetInnerHTML={{ __html: data?.content }}
-              />
-            </div>
 
-            <CardAuthor author={data?.author} createdAt={data?.createdAt} />
+  return (
+    data && (
+      <div className="relative w-full text-left overflow-hidden ">
+        <Link to={getPostLink(post)}>
+          <div className="blog-card h-full " key={post}>
+            <div className="relative flex flex-col justify-between">
+              <div>
+                <h3 className="dark:text-slate-700 text-xl">
+                  {removeSlug(data?.name)}
+                </h3>
+                <pre className="prose max-h-24 overflow-hidden">
+                  <code
+                    className="mb-6 text-base text-slate-500 mt-1 line-clamp-5"
+                    dangerouslySetInnerHTML={{ __html: data?.content }}
+                  />
+                </pre>
+              </div>
+
+              <CardAuthor author={data?.author} createdAt={data?.createdAt} />
+              <code className="text-right font-bold bg-white">
+                Category: {post?.category}
+              </code>
+            </div>
           </div>
-        </div>
-      </Link>
-      {/* {isMe && <ActionDot post={data} />} */}
-    </div>
+        </Link>
+        {/* {isMe && <ActionDot post={data} />} */}
+      </div>
+    )
   );
 }
 

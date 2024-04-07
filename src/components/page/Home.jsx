@@ -61,7 +61,7 @@ const Header = () => {
         viewport={{ once: true }}
       >
         <motion.h1
-          className="text-[10rem] font-black"
+          className="xl:text-[10rem] text-7xl font-black text-center"
           initial={{ x: -1000, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
@@ -69,7 +69,7 @@ const Header = () => {
           utils.<span className="text-amber-300">js</span>
         </motion.h1>
         <motion.p
-          className="text-[1rem] flex items-center justify-center absolute top-48 right-44 border-y-2 px-4 w-[24.8rem] animate-pulse duration-1000 bg-gradient-to-r from-pink-400 bg-sky-400 via-amber-300 font-medium  text-white tracking-[.1rem] capitalize"
+          className="text-[1rem] flex items-center justify-center xl:absolute xl:top-40 mt-4 xl:mt-0 xl:right-36 border-y-2 px-4 w-[24.8rem] animate-pulse duration-1000 bg-gradient-to-r from-pink-400 bg-sky-400 via-amber-300 font-medium  text-white tracking-[.1rem] capitalize"
           initial={{ x: -1000, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
@@ -78,7 +78,7 @@ const Header = () => {
         </motion.p>
       </motion.div>
       <motion.p
-        className="text-2xl w-2/3 backdrop-blur-lg text-center"
+        className="xl:text-2xl text-xl xl:w-2/3 backdrop-blur-lg text-center font-bold mt-10"
         initial={{ x: -1000, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}

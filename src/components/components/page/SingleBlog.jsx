@@ -11,7 +11,7 @@ import { db } from "../../../../firebase";
 
 export default function SingleBlog() {
   const location = useLocation();
-  const reference = ref(db, location?.pathname);
+  const reference = ref(db, decodeURIComponent(location?.pathname));
   const [snapshot, loading, error] = useObject(reference);
 
   let content;

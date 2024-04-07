@@ -3,7 +3,7 @@ import getDateFormat from "../../../utils.js/getDateFormat";
 
 export default function CardAuthor({ author, likes, createdAt }) {
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center bg-white">
       <div className="flex items-center capitalize space-x-2">
         <AuthorImage author={author} />
 

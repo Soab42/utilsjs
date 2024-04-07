@@ -1,18 +1,18 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { actions } from "../../actions";
-import ThreeDotSvg from "../../assets/icons/3dots.svg";
-import EditSvg from "../../assets/icons/edit.svg";
-import useActive from "../../hooks/useActive";
-import { usePost } from "../../hooks/usePost";
+// import { actions } from "../../actions";
+import ThreeDotSvg from "../../../assets/icons/3dots.svg";
+import EditSvg from "../../../assets/icons/edit.svg";
+import useActive from "../../../hooks/useActive";
+// import { usePost } from "../../hooks/usePost";
 import { actionModalVariants } from "../animated/variants";
 import DeleteButton from "./DeleteButton";
 export default function ActionDot({ post = {} }) {
   const [active, handleActive] = useActive();
-  const { dispatch } = usePost();
+  // const { dispatch } = usePost();
   const navigate = useNavigate();
   const handleEdit = (post) => {
-    dispatch({ type: actions.post.POST_EDITING, data: post });
+    // dispatch({ type: actions.post.POST_EDITING, data: post });
     navigate("/update");
   };
   return (

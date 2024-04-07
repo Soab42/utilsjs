@@ -45,7 +45,7 @@ export default function ProfileInfo() {
             <h3>
               All {posts?.length} post of {user?.displayName}
             </h3>
-            <div className="">
+            <div className="space-y-2">
               {posts?.map((post) => (
                 <UserPost post={post} key={post?.postId} />
               ))}

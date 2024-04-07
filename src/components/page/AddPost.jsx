@@ -1,4 +1,4 @@
-import { push, ref, serverTimestamp } from "firebase/database";
+import { push, ref, serverTimestamp, set } from "firebase/database";
 // import firebase from "firebase/app";
 import { useRef, useState } from "react";
 import { db } from "../../../firebase";
@@ -48,7 +48,7 @@ export default function AddPost() {
       author: user,
     })
       .then((res) => {
-        push(ref(db, "usersData/" + user?.userId + "/posts"), {
+        set(ref(db, "usersData/" + user?.userId + "/posts/" + res.key), {
           postId: res.key,
           category: data.category,
           name: data.name,
@@ -61,7 +61,7 @@ export default function AddPost() {
         if (data.category === "components") {
           navigate(`/${data.category}/${data.type}`);
         } else if (data.category === "blogs") {
-          navigate(`/${data.category}/${data.name}/${ref.key}`);
+          navigate(`/${data.category}/${data.name}/${res.key}`);
         } else {
           navigate(`/${data.category}/${data.name}`);
         }

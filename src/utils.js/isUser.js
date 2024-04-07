@@ -1,5 +1,6 @@
 // function for generating match user id
 
 export function isUser(user, id) {
-  return user?.id === id;
+  console.log(id);
+  return user?.userId === id;
 }
