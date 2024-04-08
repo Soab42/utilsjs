@@ -1,11 +1,11 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 // import useDynamicTitle from "../../hooks/useDynamicTitle";
 import BlogDetails from "../blog/BlogDetails";
 // import FloatingAction from "../blog/actionButtons/FloatingAction";
 // import Comments from "../blog/comments/Comments";
 // import Error from "../common/Error";
 import BlogPostLoader from "../loader/BlogPostLoader";
-import { useList, useObject } from "react-firebase-hooks/database";
+import { useObject } from "react-firebase-hooks/database";
 import { ref } from "firebase/database";
 import { db } from "../../../../firebase";
 

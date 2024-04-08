@@ -19,19 +19,19 @@ export default function MainCard({ data = {}, postId }) {
   });
   const isMe = isUser(data.author, user.uid);
   return (
-    <div className="relative xl:w-[calc(33.33%-8px)] w-full ">
+    <div
+      className="relative xl:w-[calc(33.33%-8px)] w-full "
+      ref={ref}
+      key={data.id}
+      style={{
+        background: isInView ? "" : "white",
+        transform: !isInView ? "translateY(30px)" : "translateX(0px)",
+        opacity: isInView ? 1 : 0,
+        transition: "all 1s cubic-bezier(0.25, 0.1, 0.25, 1) .1s",
+      }}
+    >
       <Link to={`${encodeURIComponent(data?.name)}/${postId}`}>
-        <div
-          className="blog-card h-full "
-          ref={ref}
-          key={data.id}
-          style={{
-            background: isInView ? "" : "white",
-            transform: !isInView ? "translateY(30px)" : "translateX(0px)",
-            opacity: isInView ? 1 : 0,
-            transition: "all 1s cubic-bezier(0.25, 0.1, 0.25, 1) .1s",
-          }}
-        >
+        <div className="blog-card h-full ">
           <div className="relative flex flex-col justify-between">
             <div>
               <h3 className="dark:text-slate-700 text-xl lg:text-2xl">

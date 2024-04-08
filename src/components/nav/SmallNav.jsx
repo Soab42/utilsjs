@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import useActive from "../../hooks/useActive";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,8 +10,26 @@ export default function SmallNav({ user }) {
   const handleActive = () => {
     setActive(!active);
   };
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      const navMenu = document.querySelector(".nav-menu");
+      if (navMenu && !navMenu.contains(event.target)) {
+        setActive(false);
+      }
+    }
+
+    if (active) {
+      document.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [active]);
+
   return (
-    <div className="relative">
+    <div className="relative nav-menu">
       <BurgerMenu active={active} onClick={handleActive} />
       <AnimatePresence>
         {active && (

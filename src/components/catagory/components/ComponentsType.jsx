@@ -42,7 +42,7 @@ function ShowData({ data }) {
   };
 
   return (
-    <div>
+    <div className="xl:w-full px-4 h-full">
       <div className="w-full bg-blue-400/40 p-3 flex gap-2 ">
         <button
           className={`${!show ? "bg-green-400" : ""} w-24  py-2`}
