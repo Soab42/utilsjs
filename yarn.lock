@@ -3625,7 +3625,7 @@ regexp.prototype.flags@^1.5.0, regexp.prototype.flags@^1.5.1:
     define-properties "^1.2.0"
     set-function-name "^2.0.0"
 
-remark-mdx@^3.0.0, remark-mdx@^3.0.1:
+remark-mdx@^3.0.0:
   version "3.0.1"
   resolved "https://registry.npmjs.org/remark-mdx/-/remark-mdx-3.0.1.tgz"
   integrity sha512-3Pz3yPQ5Rht2pM5R+0J2MrGoBSrzf+tJG94N+t/ilfdh8YLyyKYtidAYwTveB20BoHAcwIopOUqhcmh2F7hGYA==
