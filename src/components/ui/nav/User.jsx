@@ -16,8 +16,8 @@ export default function User() {
   };
   useEffect(() => {
     function handleClickOutside(event) {
-      const navMenu = document.querySelector(".nav-menu");
-      if (navMenu && !navMenu.contains(event.target)) {
+      const userMenu = document.querySelector(".user-menu");
+      if (userMenu && !userMenu.contains(event.target)) {
         setActive(false);
       }
     }
@@ -32,7 +32,7 @@ export default function User() {
   }, [active]);
 
   return (
-    <div className="relative z-50 hidden lg:block nav-menu">
+    <div className="relative z-50 hidden lg:block user-menu">
       <div
         className="flex gap-3 cursor-pointer justify-center items-center font-thin"
         onClick={() => {

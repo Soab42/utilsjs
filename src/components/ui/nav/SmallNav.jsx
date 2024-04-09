@@ -8,6 +8,7 @@ export default function SmallNav({ user }) {
   const [active, setActive] = useActive();
   const location = useLocation();
   const handleActive = () => {
+    console.log("clicked");
     setActive(!active);
   };
 
