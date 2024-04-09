@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
-import Prism from "prismjs";
-import "prismjs/themes/prism-coy.css";
+// import Prism from "prismjs";
+// import "prismjs/themes/prism-coy.css";
+import hljs from "highlight.js";
+// import "highlight.js/styles/github.css"; // Import a highlighting theme
+import "highlight.js/styles/brown-paper.min.css";
 import { TiClipboard, TiTick } from "react-icons/ti";
 function CodeViewer({ text }) {
   const [copy, setCopy] = useState(false);
@@ -14,7 +17,8 @@ function CodeViewer({ text }) {
   };
 
   useEffect(() => {
-    Prism.highlightAll();
+    hljs.highlightAll();
+    // Prism.highlightAll();
   }, [text]);
 
   return (
