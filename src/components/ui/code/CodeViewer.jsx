@@ -1,46 +1,23 @@
-import { useEffect, useState } from "react";
-// import Prism from "prismjs";
-// import "prismjs/themes/prism-coy.css";
+import { useEffect } from "react";
+
 import hljs from "highlight.js";
-// import "highlight.js/styles/github.css"; // Import a highlighting theme
-import { TiClipboard, TiTick } from "react-icons/ti";
+import "highlight.js/styles/docco.css"; // Import a highlighting theme
+
+import useCopy from "../../../hooks/useCopy";
+import CopyButton from "./CopyButton";
 function CodeViewer({ text }) {
-  const [copy, setCopy] = useState(false);
-  const handleCopy = () => {
-    const textToCopy = document.getElementById("code").innerText;
-    navigator.clipboard.writeText(textToCopy);
-    setCopy(true);
-    setTimeout(() => {
-      setCopy(false);
-    }, 5000);
-  };
+  const [copy, handleCopy, codeRef] = useCopy();
 
   useEffect(() => {
     hljs.highlightAll();
-    // Prism.highlightAll();
   }, [text]);
 
   return (
-    <pre className="relative">
-      <button
-        className="absolute px-1 right-2 top-2  ring-1 gap-1 rounded-sm backdrop-blur z-50"
-        onClick={handleCopy}
-      >
-        {copy ? (
-          <div className="flex justify-center items-center gap-1 p-1 w-24 text-sky-400">
-            <TiTick />
-            copied
-          </div>
-        ) : (
-          <div className="flex justify-center items-center gap-1 p-1 w-24">
-            <TiClipboard />
-            copy
-          </div>
-        )}
-      </button>
+    <pre className="relative ">
+      <CopyButton copy={copy} handleCopy={handleCopy} />
       <code
-        className={`language-javascript`}
-        id="code"
+        className={"language-javascript"}
+        ref={codeRef}
         dangerouslySetInnerHTML={{ __html: text }}
       ></code>
     </pre>
