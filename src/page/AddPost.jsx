@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { db } from "../../firebase";
 import CodeEditor from "../components/ui/code/CodeEditor";
 import TextWithMarkup from "../components/ui/code/TextWithMarkup";
-import { componentsList } from "../data/componentsTypeList";
+import { componentsList } from "../docs/componentsTypeList";
 import useActive from "../hooks/useActive";
 import { useAuth } from "../hooks/useAuth";
 import { generateSlug } from "../utils/generateSlug";
@@ -30,7 +30,6 @@ export default function AddPost() {
     }
     // console.log(test);
   };
-  console.log(data);
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);

@@ -37,18 +37,20 @@ export default function LeftBar() {
         {/* Map over the array to render each item */}
         {snapshots?.map((item, index) => {
           return (
-            <li
+            <Link
+              to={`${pathName}/${decodeURIComponent(item.key)}`}
               key={index}
-              className={`${
-                params && params?.name === item.key
-                  ? "shadow-md ring-emerald-500 border-y border-green-600 w-full rounded-sm"
-                  : ""
-              } h-10 flex mt-1 items-center hover:bg-green-600/30 pl-2 border-b`}
             >
-              <Link to={`${pathName}/${decodeURIComponent(item.key)}`}>
+              <li
+                className={`${
+                  params && params?.name === item.key
+                    ? "shadow-md ring-emerald-500 border-y border-green-600 w-full rounded-sm"
+                    : ""
+                } h-10 flex-center mt-1 items-center  pl-2 border-b`}
+              >
                 {removeSlug(item.key)}
-              </Link>
-            </li>
+              </li>
+            </Link>
           );
         })}
       </ul>
@@ -84,7 +86,7 @@ function SmallLeftBar({ snapshots }) {
             ></div>
 
             <div
-              className={` h-1 bg-black duration-500 rounded-full  w-5 -translate-y-0
+              className={` h-1 bg-black duration-500 rounded-full  w-3 -translate-y-0
         `}
             ></div>
           </button>
@@ -93,7 +95,7 @@ function SmallLeftBar({ snapshots }) {
       <AnimatePresence>
         {active && (
           <motion.ul
-            className="w-[45vw] flex flex-col p-2 rounded h-full ring-1 ring-green-600/70 bg-white lg:hidden absolute top-20 z-50 "
+            className="w-[45vw] flex flex-col p-2 rounded h-full ring-1 ring-green-600/70 bg-white lg:hidden absolute top-20 z-50 -left-6 "
             initial={{
               opacity: 0,
               translateX: -100,
@@ -135,21 +137,21 @@ function SmallLeftBar({ snapshots }) {
             {/* Map over the array to render each item */}
             {snapshots?.map((item, index) => {
               return (
-                <li
+                <Link
                   key={index}
-                  className={`${
-                    params && params?.name === item.key
-                      ? "shadow-md ring-emerald-500 border-y border-green-600 w-full rounded-sm"
-                      : ""
-                  } h-10 flex mt-1 items-center hover:bg-green-600/30 pl-2 border-b`}
+                  to={`${pathName}/${decodeURIComponent(item.key)}`}
+                  onClick={setActive}
                 >
-                  <Link
-                    to={`${pathName}/${decodeURIComponent(item.key)}`}
-                    onClick={setActive}
+                  <li
+                    className={`${
+                      params && params?.name === item.key
+                        ? "shadow-md ring-emerald-500 border-y border-green-600 w-full rounded-sm"
+                        : ""
+                    } h-10 flex mt-1 items-center  pl-2 border-b`}
                   >
                     {removeSlug(item.key)}
-                  </Link>
-                </li>
+                  </li>
+                </Link>
               );
             })}
           </motion.ul>

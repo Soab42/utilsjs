@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 import hljs from "highlight.js";
-import "highlight.js/styles/docco.css"; // Import a highlighting theme
+import "highlight.js/styles/stackoverflow-light.css";
 
 import useCopy from "../../../hooks/useCopy";
 import CopyButton from "./CopyButton";
@@ -13,7 +13,7 @@ function CodeViewer({ text }) {
   }, [text]);
 
   return (
-    <pre className="relative ">
+    <pre className="relative mt-2">
       <CopyButton copy={copy} handleCopy={handleCopy} />
       <code
         className={"language-javascript"}

@@ -24,6 +24,10 @@
     width: 2px;
   }
 
+  ::-webkit-scrollbar {
+    height: 2px;
+  }
+
   /* Track */
   ::-webkit-scrollbar-track {
     background: #147373;
@@ -367,4 +371,22 @@ a > li:hover {
   padding-inline-end: 1.1428571em;
   padding-bottom: 0.8571429em;
   padding-inline-start: 1.1428571em; */
+}
+.prose {
+  max-width: 100%;
+}
+.button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #ffffff;
+  border-radius: 20px; /* Adjust this value to change the roundness */
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2980b9;
 }

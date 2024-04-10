@@ -4,7 +4,7 @@ import { TiClipboard, TiTick } from "react-icons/ti";
 export default function CopyButton({ handleCopy, copy }) {
   return (
     <button
-      className="absolute px-1 right-2 top-2  ring-1 gap-1 rounded-sm backdrop-blur z-10"
+      className="absolute px-1 right-5 top-4  ring-1 gap-1 rounded-sm backdrop-blur z-10 text-slate-500"
       onClick={handleCopy}
     >
       {copy ? (
