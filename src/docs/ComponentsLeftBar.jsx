@@ -10,7 +10,7 @@ export default function ComponentsLeftBar() {
     <>
       {/* sm left bar */}
       <div
-        className={`fixed top-0 px-2 z-50 ${active ? "h-screen w-screen" : ""}`}
+        className={`fixed top-0 px-2 z-10 ${active ? "h-screen w-screen" : ""}`}
         onClick={(e) => {
           e.preventDefault();
           setActive();
