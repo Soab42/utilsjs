@@ -5,6 +5,7 @@ import { db } from "../../../../firebase";
 import Bio from "./Bio";
 import ProfileImage from "./ProfileImage";
 import UserPost from "./UserPost";
+import Loading from "../common/loading";
 
 export default function ProfileInfo() {
   //   const [user, setUser] = useState({});
@@ -14,10 +15,7 @@ export default function ProfileInfo() {
 
   const user = snapshot?.val();
   const posts = user?.posts && Object?.values(user?.posts);
-  if (loading)
-    return (
-      <div className="flex-center h-screen text-5xl capitalize">loading..</div>
-    );
+  if (loading) return <Loading />;
   if (error)
     return (
       <div className="flex-center h-screen text-5xl capitalize">error</div>
@@ -29,7 +27,7 @@ export default function ProfileInfo() {
       </div>
     );
   return (
-    <div className="flex flex-col items-center py-8 text-center">
+    <div className="flex flex-col items-center py-8 text-center mt-20">
       {user && (
         <>
           <ProfileImage author={user} />

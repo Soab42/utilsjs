@@ -7,7 +7,7 @@ export default function BlogDetails({ blog = {} }) {
   const { author, content, createdAt } = blog;
 
   return (
-    <section className="px-10">
+    <section className="px-10 mt-10 xl:mt-0">
       <div className="text-center py-8 px-4 w-full ">
         <h1 className="font-bold text-3xl md:text-5xl capitalize">
           {removeSlug(blog.name)}

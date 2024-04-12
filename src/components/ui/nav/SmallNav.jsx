@@ -8,7 +8,6 @@ export default function SmallNav({ user }) {
   const [active, setActive] = useActive();
   const location = useLocation();
   const handleActive = () => {
-    console.log("clicked");
     setActive(!active);
   };
 
@@ -30,12 +29,12 @@ export default function SmallNav({ user }) {
   }, [active]);
 
   return (
-    <div className="relative nav-menu">
+    <div className="relative nav-menu xl:hidden">
       <BurgerMenu active={active} onClick={handleActive} />
       <AnimatePresence>
         {active && (
           <motion.div
-            className="absolute -right-10 top-11 w-[45vw]  bg-white p-2 gap-2 flex flex-col"
+            className="absolute -right-10 top-12 w-[45vw] lg: md:w-[25vw]   bg-white p-2 gap-2 flex flex-col"
             initial={{
               opacity: 0,
               translateX: 100,

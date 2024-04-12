@@ -1,21 +1,21 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "../nav/Navbar";
 import Footer from "../nav/Footer";
+import Navbar from "../nav/Navbar";
+import Loading from "./loading";
 
 export default function Layout() {
   return (
     <div className="overflow-hidden min-h-screen">
-      <nav>
+      <Suspense fallback={<Loading />}>
         <Navbar />
-      </nav>
-
-      <main className="min-h-[88vh] mt-2 xl:mx-[10%]">
-        <Outlet />
-      </main>
-      <footer className="backdrop-blur-lg w-full">
-        <Footer />
-      </footer>
+        <main className="min-h-[88vh]  xl:mt-20 xl:mx-[10%]">
+          <Outlet />
+        </main>
+        <footer className="backdrop-blur-lg w-full">
+          <Footer />
+        </footer>
+      </Suspense>
     </div>
   );
 }

@@ -8,7 +8,6 @@ import useActive from "../../../hooks/useActive";
 // import { extractFirstPathname } from "../../utils/extractFirstPathname";
 import { removeSlug } from "../../../utils/generateSlug";
 import { extractFirstPathname } from "../../../utils/extractFirstPathname";
-import usePortal from "../../../hooks/usePortal";
 export default function LeftBar() {
   // Define an array of items with links
   const location = useLocation();
@@ -44,7 +43,7 @@ export default function LeftBar() {
               <li
                 className={`${
                   params && params?.name === item.key
-                    ? "shadow-md ring-emerald-500 border-y border-green-600 w-full rounded-sm"
+                    ? "shadow-md ring-emerald-500 border-y bg-[#5cf24842]  border-green-600 w-full rounded-sm"
                     : ""
                 } h-10 flex-center mt-1 items-center  pl-2 border-b`}
               >
@@ -65,14 +64,14 @@ function SmallLeftBar({ snapshots }) {
 
   return (
     <div
-      className={`fixed -top-1 ${active ? "h-screen w-screen" : ""}`}
+      className={`fixed ${active ? "h-screen w-screen" : ""}`}
       onClick={(e) => {
         e.preventDefault();
         setActive(false);
       }}
     >
       {!active && (
-        <div className=" p-1 xl:hidden fixed  pl-5 top-[4.5rem] left-0 bg-white py-3 backdrop-blur-2xl w-full">
+        <div className=" p-1 xl:hidden fixed top-14  pl-5 left-0 bg-white py-3 backdrop-blur-2xl w-full">
           <button
             className="flex flex-col gap-1 duration-500"
             onClick={(e) => {
@@ -95,7 +94,7 @@ function SmallLeftBar({ snapshots }) {
       <AnimatePresence>
         {active && (
           <motion.ul
-            className="w-[45vw] flex flex-col p-2 rounded h-full ring-1 ring-green-600/70 bg-white lg:hidden absolute top-20 z-50 -left-6 "
+            className="w-1/2 md:w-1/4 lg:1/4 flex flex-col p-2 rounded h-full  bg-white lg:hidden fixed top-14 z-10 left-0 "
             initial={{
               opacity: 0,
               translateX: -100,
@@ -145,7 +144,7 @@ function SmallLeftBar({ snapshots }) {
                   <li
                     className={`${
                       params && params?.name === item.key
-                        ? "shadow-md ring-emerald-500 border-y border-green-600 w-full rounded-sm"
+                        ? "shadow-md ring-emerald-500 border-y bg-[#5cf24842] border-green-600 w-full rounded-sm"
                         : ""
                     } h-10 flex mt-1 items-center  pl-2 border-b`}
                   >

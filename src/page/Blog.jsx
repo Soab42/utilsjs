@@ -4,14 +4,18 @@ import { useListVals } from "react-firebase-hooks/database";
 import { Link, useLocation } from "react-router-dom";
 import MainCard from "../components/ui/blog/MainCard";
 import { db } from "../../firebase";
+import Loading from "../components/ui/common/loading";
 
 export default function Blog() {
   const location = useLocation();
   const reference = ref(db, location?.pathname);
   const [snapshots, loading, error] = useListVals(reference);
-  // console.log(snapshots);
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
-    <div className=" border-x-2 min-h-[90vh] p-5 relative">
+    <div className=" border-x-2 min-h-[90vh] p-5 relative mt-14">
       <div className="flex-center">
         <Link
           to={"/write"}

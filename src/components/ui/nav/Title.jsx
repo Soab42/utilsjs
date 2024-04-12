@@ -8,7 +8,7 @@ const RotatingTitle = () => {
   //   console.log(textArray);
 
   return (
-    <div className="xl:text-4xl text-2xl  tracking-wide flex justify-center font-bold  overflow-hidden">
+    <div className="xl:text-4xl text-2xl  w-fit tracking-wide flex justify-center font-bold  overflow-hidden">
       {textArray.map((letter, i) => {
         return (
           <motion.div

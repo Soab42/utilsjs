@@ -17,7 +17,7 @@ export default function SinglePost() {
   return (
     snapshots && (
       <div className="xl:w-[60vw] w-full space-y-3 p-3 text-sm text-pretty overflow-hidden">
-        <h3 className="text-center bg-blue-400/20 xl:text-2xl pl-4 h-10 font-bold mt-5 xl:mt-0">
+        <h3 className="text-center bg-blue-400/20 xl:text-2xl pl-4 h-10 font-bold">
           {removeSlug(snapshots[0]?.val().name)}
         </h3>
         {snapshots?.map((snapshot) => (

@@ -30,10 +30,8 @@ const ComponentMarkup = () => {
     getComponent();
   }, [name]);
 
-  // console.log(dynamicComponent); // For debugging purposes
-
   return (
-    <div className="prose p-4 w-full h-full ">
+    <div className="prose p-4 w-full h-full mt-12 xl:mt-0">
       <MDXProvider components={components}>
         {/* Render the dynamic component */}
         {dynamicComponent && dynamicComponent}

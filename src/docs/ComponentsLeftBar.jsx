@@ -10,15 +10,15 @@ export default function ComponentsLeftBar() {
     <>
       {/* sm left bar */}
       <div
-        className={`fixed top-0 px-2 z-10 ${active ? "h-screen w-screen" : ""}`}
+        className={`fixed px-2 z-10 ${active ? "h-screen w-screen" : ""}`}
         onClick={(e) => {
           e.preventDefault();
           setActive();
         }}
       >
-        <div className={`xl:hidden mt-16 " ${active ? "" : "bg-red-400"}`}>
+        <div className={`xl:hidden " ${active ? "" : "bg-red-400"}`}>
           {!active && (
-            <div className=" p-1 xl:hidden fixed  pl-5 top-[4.5rem] left-0 w-full bg-white py-3 backdrop-blur-2xl ">
+            <div className=" p-1 xl:hidden fixed  pl-5 top-14 left-0 w-full bg-white py-3  backdrop-blur-2xl ">
               <button
                 className="flex flex-col gap-1 duration-500"
                 onClick={setActive}
@@ -38,7 +38,7 @@ export default function ComponentsLeftBar() {
           <AnimatePresence>
             {active && (
               <motion.div
-                className="w-1/2 bg-white flex flex-col fixed h-full pb-2"
+                className="w-1/2 md:w-1/4 lg:w-1/4 bg-white flex flex-col fixed mt-14 h-full pb-2"
                 initial={{
                   opacity: 0,
                   translateX: -100,
@@ -93,7 +93,7 @@ export default function ComponentsLeftBar() {
                             className={`${
                               params &&
                               params?.name === getFreshenComponent(component)
-                                ? "shadow-md ring-emerald-500 border-y border-green-600 rounded-sm "
+                                ? "shadow-md ring-emerald-500 border-y border-green-600 rounded-sm bg-[#5cf24842]"
                                 : ""
                             } h-10 flex-center mt-1   pl-2 border-b`}
                           >
@@ -131,7 +131,7 @@ export default function ComponentsLeftBar() {
                   <li
                     className={`${
                       params && params?.name === getFreshenComponent(component)
-                        ? "shadow-md ring-emerald-500 border-y border-green-600 rounded-sm"
+                        ? "shadow-md ring-emerald-500 border-y bg-[#5cf24842] border-green-600 rounded-sm"
                         : ""
                     } h-10 flex-center mt-1  pl-2 border-b`}
                   >

@@ -24,38 +24,6 @@ const Header = () => {
   };
   return (
     <div className="w-full flex flex-col items-center justify-center  bg-slate-50 h-full overflow-hidden p-4 relative rounded-xl ">
-      <section className="absolute flex  gap-2 shadow-2xl blur-3xl">
-        <motion.div
-          animate="animate"
-          variants={variants}
-          initial="initial"
-          className="bg-green-400 size-56 "
-        ></motion.div>
-        <motion.div
-          animate="animate"
-          variants={variants}
-          initial="initial"
-          className="bg-sky-400 size-56 "
-        ></motion.div>
-        <motion.div
-          animate="animate"
-          variants={variants}
-          initial="initial"
-          className="bg-green-400 size-56 "
-        ></motion.div>
-        <motion.div
-          animate="animate"
-          variants={variants}
-          initial="initial"
-          className="bg-pink-400 size-56 "
-        ></motion.div>
-        <motion.div
-          animate="animate"
-          variants={variants}
-          initial="initial"
-          className="bg-sky-400 size-56 "
-        ></motion.div>
-      </section>
       <motion.div
         className="header relative backdrop-blur-lg"
         viewport={{ once: true }}

@@ -5,7 +5,7 @@ export default function LinkList() {
   const location = useLocation();
   // console.log(location);
   return (
-    <div className="lg:flex hidden">
+    <div className="xl:flex hidden gap-2">
       <Link to={"/"}>
         <li className={location.pathname === "/" ? "active" : ""}>home</li>
       </Link>

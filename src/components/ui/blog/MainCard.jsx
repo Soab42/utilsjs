@@ -17,7 +17,7 @@ export default function MainCard({ data = {}, postId }) {
     once: true,
     margin: "0px 100px -50px 0px",
   });
-  const isMe = isUser(data.author, user.uid);
+  const isMe = isUser(data?.author, user?.uid);
   return (
     <div
       className="relative xl:w-[calc(33.33%-8px)] w-full "
