@@ -5,7 +5,7 @@ import { db } from "../../../../firebase";
 import Bio from "./Bio";
 import ProfileImage from "./ProfileImage";
 import UserPost from "./UserPost";
-import Loading from "../common/loading";
+import Loading from "../common/Loading";
 
 export default function ProfileInfo() {
   //   const [user, setUser] = useState({});
