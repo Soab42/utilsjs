@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "../nav/Footer";
 import Navbar from "../nav/Navbar";
-import Loading from "./loading";
+import Loading from "./Loading";
 
 export default function Layout() {
   return (
