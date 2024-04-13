@@ -4,7 +4,7 @@ import { useListVals } from "react-firebase-hooks/database";
 import { Link, useLocation } from "react-router-dom";
 import MainCard from "../components/ui/blog/MainCard";
 import { db } from "../../firebase";
-import Loading from "../components/ui/common/loading";
+import Loading from "../components/ui/common/Loading";
 
 export default function Blog() {
   const location = useLocation();
