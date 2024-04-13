@@ -17,7 +17,6 @@ import SingleHooks from "./components/ui/post/SinglePost";
 import PrivateRoute from "./route/PrivateRoute";
 import PublicRoute from "./route/PublicRoute";
 import Test from "./Test";
-
 function App() {
   return (
     <>

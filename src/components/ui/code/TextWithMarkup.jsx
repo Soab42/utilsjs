@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import CodeViewer from "./CodeViewer";
 export default function TextWithMarkup({ text }) {
-  console.log(text);
   // Define the regex pattern
   const pattern = /<pre>@(.*?)@#/gs;
   // Split the text into chunks using the regular expression

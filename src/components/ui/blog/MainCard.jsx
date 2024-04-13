@@ -53,7 +53,7 @@ export default function MainCard({ data = {}, postId }) {
           </div>
         </div>
       </Link>
-      {isMe && <ActionDot post={data} />}
+      {isMe && <ActionDot post={data} postId={postId} />}
     </div>
   );
 }

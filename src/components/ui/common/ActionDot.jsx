@@ -7,7 +7,7 @@ import useActive from "../../../hooks/useActive";
 // import { usePost } from "../../hooks/usePost";
 import { actionModalVariants } from "../animated/variants";
 import DeleteButton from "./DeleteButton";
-export default function ActionDot({ post = {} }) {
+export default function ActionDot({ post = {}, postId }) {
   const [active, handleActive] = useActive();
   // const { dispatch } = usePost();
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ export default function ActionDot({ post = {} }) {
             initial="initial"
             animate="animate"
             exit="exit"
-            onClick={() => handleActive()}
+            // onClick={() => handleActive()}
           >
             <button
               className="action-menu-item hover:text-green-400"
@@ -39,7 +39,11 @@ export default function ActionDot({ post = {} }) {
               <img src={EditSvg} alt="Edit" />
               Edit
             </button>
-            <DeleteButton postId={post?.id} onclick={handleActive} />
+            <DeleteButton
+              postId={postId}
+              postName={post.name}
+              onclick={handleActive}
+            />
           </motion.div>
         )}
       </AnimatePresence>
