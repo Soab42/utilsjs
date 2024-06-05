@@ -13,7 +13,7 @@ export default function ActionDot({ post = {}, postId }) {
   const navigate = useNavigate();
   const handleEdit = (post) => {
     // dispatch({ type: actions.post.POST_EDITING, data: post });
-    navigate("/update");
+    // navigate("/update");
   };
   return (
     <div className="absolute right-1 top-2">
@@ -41,8 +41,9 @@ export default function ActionDot({ post = {}, postId }) {
             </button>
             <DeleteButton
               postId={postId}
-              postName={post.name}
+              postName={post?.name}
               onclick={handleActive}
+              category={post?.category}
             />
           </motion.div>
         )}

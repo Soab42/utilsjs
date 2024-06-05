@@ -14,6 +14,7 @@ export default function Blog() {
   if (loading) {
     return <Loading />;
   }
+
   return (
     <div className=" border-x-2 min-h-[90vh] p-5 relative mt-14">
       <div className="flex-center">

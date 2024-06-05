@@ -4,14 +4,16 @@ import { db } from "../../../../firebase";
 import CardAuthor from "../blog/CardAuthor";
 import { Link } from "react-router-dom";
 import { removeSlug } from "../../../utils/generateSlug";
-export default function UserPost({ post = {} }) {
+import ActionDot from "../common/ActionDot";
+export default function UserPost({ post = {}, userId }) {
+  console.log("post", post);
   const userRef = ref(
     db,
     post?.category + "/" + post?.name + "/" + post?.postId
   );
   const [snapshot, loading, error] = useObject(userRef);
   const data = snapshot?.val();
-
+  const isMe = userId === data?.author?.userId;
   return (
     data && (
       <div className="relative w-full text-left overflow-hidden ">
@@ -37,7 +39,7 @@ export default function UserPost({ post = {} }) {
             </div>
           </div>
         </Link>
-        {/* {isMe && <ActionDot post={data} />} */}
+        {isMe && <ActionDot post={data} postId={post?.postId} />}
       </div>
     )
   );
