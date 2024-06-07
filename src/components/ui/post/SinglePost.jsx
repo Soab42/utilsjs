@@ -12,12 +12,11 @@ export default function SinglePost() {
   const [snapshots, loading, error] = useList(reference);
   error && <strong>Error: {error}</strong>;
   loading && <span>;List: Loading...</span>;
-  // snapshots.map((snapshot) => console.log(snapshot?.val()));
 
   return (
     snapshots && (
-      <div className="xl:w-[60vw] w-full space-y-3 p-3 text-sm text-pretty overflow-hidden">
-        <h3 className="text-center bg-blue-400/20 xl:text-2xl pl-4 h-10 font-bold">
+      <div className="xl:w-[60vw] w-full space-y-3 px-3 text-sm text-pretty overflow-hidden">
+        <h3 className="text-center bg-blue-400/20 text-2xl pl-4 h-fit font-bold rounded-md active border-b-2 border-emerald-500">
           {removeSlug(snapshots[0]?.val().name)}
         </h3>
         {snapshots?.map((snapshot) => (

@@ -1,9 +1,8 @@
 import { ref } from "firebase/database";
-import React from "react";
 import { useListVals } from "react-firebase-hooks/database";
 import { Link, useLocation } from "react-router-dom";
-import MainCard from "../components/ui/blog/MainCard";
 import { db } from "../../firebase";
+import MainCard from "../components/ui/blog/MainCard";
 import Loading from "../components/ui/common/Loading";
 
 export default function Blog() {
@@ -16,19 +15,20 @@ export default function Blog() {
   }
 
   return (
-    <div className=" border-x-2 min-h-[90vh] p-5 relative mt-14">
-      <div className="flex-center">
-        <Link
-          to={"/write"}
-          className="px-10 bg-green-700/20 text-center py-2 hover:bg-green-600/50 duration-500 "
-        >
-          Write New blog
-        </Link>
-      </div>
-      <section className="mt-4 ring-1 p-2 grid grid-flow-row rounded-lg ">
-        <h3 className="w-full bg-green-400/30 text-center mb-2 text-fuchsia-900 font-bold text-2xl">
-          Recent Blogs
-        </h3>
+    <div className="min-h-[90vh] relative mt-16  px-4">
+      <section className="grid grid-flow-row rounded-lg gap-2">
+        <div className="flex-center bg-[#5cf24842]  border-b-2 border-emerald-500 px-3">
+          <h3 className="w-full text-center text-fuchsia-900 font-bold text-2xl">
+            Recent Blogs
+          </h3>
+          <Link
+            to={"/write"}
+            className=" text-center hover:bg-green-600/50 duration-500 min-w-fit p-2 rounded-sm font-semibold bg-[#E0FBE2] text-slate-500"
+          >
+            Write New blog
+          </Link>
+        </div>
+
         <div className="flex flex-wrap gap-2">
           {snapshots.map((snapshot) => {
             const data = Object.values(snapshot)[0];

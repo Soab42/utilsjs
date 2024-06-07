@@ -1,7 +1,7 @@
 import { push, ref, serverTimestamp, set } from "firebase/database";
 // import firebase from "firebase/app";
 import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { db } from "../../firebase";
 import CodeEditor from "../components/ui/code/CodeEditor";
 import TextWithMarkup from "../components/ui/code/TextWithMarkup";
@@ -10,6 +10,7 @@ import useActive from "../hooks/useActive";
 import { useAuth } from "../hooks/useAuth";
 import { generateSlug } from "../utils/generateSlug";
 export default function AddPost() {
+  const { category } = useParams();
   const [data, setData] = useState({ category: "", name: "", content: "" });
   const [loading, setLoading] = useActive();
   const [error, setError] = useState("");
@@ -75,8 +76,8 @@ export default function AddPost() {
 
   loading && <span> Loading...</span>;
   return (
-    <div className="flex flex-col">
-      <h1 className="w-full bg-rose-700/20 p-2 text-center text-xl mb-2">
+    <div className="flex flex-col mt-16 px-4">
+      <h1 className="w-full bg-[#5cf24842]  border-b-2 border-emerald-400 p-2 text-center text-xl mb-2">
         Add New Post
       </h1>
       <div className="xl:flex ">
@@ -91,6 +92,7 @@ export default function AddPost() {
                 name="category"
                 id="category"
                 className=" w-56 h-10 bg-green-100 ml-2 pl-2"
+                defaultValue={category ?? "select category"}
                 onChange={handleChange}
                 required
               >

@@ -6,7 +6,7 @@ import AddPost from "./page/AddPost";
 import Blog from "./page/Blog";
 import Components from "./page/Components";
 import Home from "./page/Home";
-import Hooks from "./page/Hooks";
+import Hooks from "./page/Feature";
 import Login from "./page/Login";
 import PageLayout from "./page/PageLayout";
 import PageNotFound from "./page/PageNotFound";
@@ -17,6 +17,7 @@ import SingleHooks from "./components/ui/post/SinglePost";
 import PrivateRoute from "./route/PrivateRoute";
 import PublicRoute from "./route/PublicRoute";
 import Test from "./Test";
+import Feature from "./page/Feature";
 function App() {
   return (
     <>
@@ -31,6 +32,7 @@ function App() {
             <Route path="/components" element={<Components />} />
             <Route path="/components/:name" element={<Components />} />
             <Route path="/profile/:id" element={<ProfileInfo />} />
+            <Route path="/:page" element={<Feature />} />
 
             <Route element={<PublicRoute />}>
               <Route path="/login" element={<Login />} />
@@ -38,14 +40,10 @@ function App() {
             </Route>
             <Route element={<PrivateRoute />}>
               <Route path="/write" element={<AddPost />} />
+              <Route path="/write/:category" element={<AddPost />} />
             </Route>
             <Route element={<PageLayout />}>
-              <Route path="/hooks" element={<Hooks />} />
-              <Route path="/hooks/:name" element={<SingleHooks />} />
-              <Route path="/utils" element={<Utils />} />
-              <Route path="/utils/:name" element={<SingleHooks />} />
-              <Route path="/tools" element={<Tools />} />
-              <Route path="/tools/:name" element={<SingleHooks />} />
+              <Route path="/:page/:name" element={<SingleHooks />} />
             </Route>
           </Route>
         </Routes>

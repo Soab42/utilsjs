@@ -1,19 +1,28 @@
-import { ref, remove } from "firebase/database";
+import { ref } from "firebase/database";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useObject } from "react-firebase-hooks/database";
-import { db } from "../../../../firebase";
-import CardAuthor from "../blog/CardAuthor";
 import { Link } from "react-router-dom";
+import { auth, db } from "../../../../firebase";
 import { removeSlug } from "../../../utils/generateSlug";
+import CardAuthor from "../blog/CardAuthor";
 import ActionDot from "../common/ActionDot";
 export default function UserPost({ post = {}, userId }) {
-  console.log("post", post);
-  const userRef = ref(
+  const postRef = ref(
     db,
     post?.category + "/" + post?.name + "/" + post?.postId
   );
-  const [snapshot, loading, error] = useObject(userRef);
+  const [snapshot, loading, error] = useObject(postRef);
+  const [user] = useAuthState(auth);
+
   const data = snapshot?.val();
-  const isMe = userId === data?.author?.userId;
+  const isMe = userId === user?.uid;
+  debugger;
+  error && (
+    <div className="flex-center h-screen text-5xl capitalize">error</div>
+  );
+  loading && (
+    <div className="flex-center h-screen text-5xl capitalize">loading</div>
+  );
   return (
     data && (
       <div className="relative w-full text-left overflow-hidden ">
