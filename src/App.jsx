@@ -1,21 +1,23 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./components/page/Home";
-import Layout from "./components/common/Layout";
-import Login from "./components/page/Login";
-import PageNotFound from "./components/page/PageNotFound";
-import PrivateRoute from "./components/route/PrivateRoute";
-import PublicRoute from "./components/route/PublicRoute";
-import Registration from "./components/page/Registration";
-import Blog from "./components/page/Blog";
-import Components from "./components/page/Components";
-import Hooks from "./components/page/Hooks";
-import PageLayout from "./components/page/PageLayout";
-import Tools from "./components/page/Tools";
-import Utils from "./components/page/Utils";
-import SingleHooks from "./components/post/SinglePost";
-import AddPost from "./components/page/AddPost";
-import SingleBlog from "./components/components/page/SingleBlog";
-
+import Layout from "./components/ui/common/Layout";
+import SingleBlog from "./page/SingleBlog";
+import ProfileInfo from "./components/ui/profile/ProfileInfo";
+import AddPost from "./page/AddPost";
+import Blog from "./page/Blog";
+import Components from "./page/Components";
+import Home from "./page/Home";
+import Hooks from "./page/Feature";
+import Login from "./page/Login";
+import PageLayout from "./page/PageLayout";
+import PageNotFound from "./page/PageNotFound";
+import Registration from "./page/Registration";
+import Tools from "./page/Tools";
+import Utils from "./page/Utils";
+import SingleHooks from "./components/ui/post/SinglePost";
+import PrivateRoute from "./route/PrivateRoute";
+import PublicRoute from "./route/PublicRoute";
+import Test from "./Test";
+import Feature from "./page/Feature";
 function App() {
   return (
     <>
@@ -25,23 +27,23 @@ function App() {
             <Route path="*" element={<PageNotFound />} />
             <Route path="/" element={<Home />} exact />
             <Route path="/blogs" element={<Blog />} />
+            <Route path="/test" element={<Test />} />
             <Route path="/blogs/:name/:id" element={<SingleBlog />} />
             <Route path="/components" element={<Components />} />
             <Route path="/components/:name" element={<Components />} />
+            <Route path="/profile/:id" element={<ProfileInfo />} />
+            <Route path="/:page" element={<Feature />} />
+
             <Route element={<PublicRoute />}>
               <Route path="/login" element={<Login />} />
               <Route path="/registration" element={<Registration />} />
             </Route>
             <Route element={<PrivateRoute />}>
               <Route path="/write" element={<AddPost />} />
+              <Route path="/write/:category" element={<AddPost />} />
             </Route>
             <Route element={<PageLayout />}>
-              <Route path="/hooks" element={<Hooks />} />
-              <Route path="/hooks/:name" element={<SingleHooks />} />
-              <Route path="/utils" element={<Utils />} />
-              <Route path="/utils/:name" element={<SingleHooks />} />
-              <Route path="/tools" element={<Tools />} />
-              <Route path="/tools/:name" element={<SingleHooks />} />
+              <Route path="/:page/:name" element={<SingleHooks />} />
             </Route>
           </Route>
         </Routes>
